@@ -24,7 +24,7 @@ STATE_FILE = HERE / "state.json"
 PROMPT = (HERE / "prompt.md").read_text()
 
 MODEL = os.environ.get("RETELL_MODEL", "gpt-4.1")
-VOICE_ID = os.environ.get("RETELL_VOICE_ID", "11labs-Anaya")  # Indian English female
+VOICE_ID = os.environ.get("RETELL_VOICE_ID", "11labs-Monika")  # Indian English female
 
 
 def build_config(backend_url: str) -> dict:
@@ -44,7 +44,6 @@ def build_config(backend_url: str) -> dict:
             "responsiveness": 0.8,
             "interruption_sensitivity": 0.8,
             "enable_backchannel": True,
-            "normalize_for_speech": True,
         },
     }
 
@@ -74,6 +73,7 @@ def main() -> None:
         llm = client.llm.create(**config["llm"])
         print("created LLM", llm.llm_id)
     state["llm_id"] = llm.llm_id
+    STATE_FILE.write_text(json.dumps(state, indent=2))
 
     agent_kwargs = {
         **config["agent"],
@@ -86,6 +86,7 @@ def main() -> None:
         agent = client.agent.create(**agent_kwargs)
         print("created agent", agent.agent_id)
     state["agent_id"] = agent.agent_id
+    STATE_FILE.write_text(json.dumps(state, indent=2))
 
     inbound = [{"agent_id": agent.agent_id, "weight": 1}]
     if args.buy_number and not state.get("phone_number"):

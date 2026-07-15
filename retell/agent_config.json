@@ -10,7 +10,7 @@
         "type": "custom",
         "name": "get_clinic_info",
         "description": "Hospital address, OPD hours, today's date, and the full list of departments.",
-        "url": "http://localhost:8000/tools/get_clinic_info",
+        "url": "https://fmri-receptionist-backend.onrender.com/tools/get_clinic_info",
         "speak_during_execution": false,
         "speak_after_execution": true,
         "parameters": {
@@ -23,7 +23,7 @@
         "type": "custom",
         "name": "find_doctors",
         "description": "Find doctors by (possibly misspelled) name and/or department. Returns id, designation, department, experience, and consultation fee.",
-        "url": "http://localhost:8000/tools/find_doctors",
+        "url": "https://fmri-receptionist-backend.onrender.com/tools/find_doctors",
         "speak_during_execution": true,
         "speak_after_execution": true,
         "parameters": {
@@ -45,7 +45,7 @@
         "type": "custom",
         "name": "search_availability",
         "description": "Open slots for a doctor. Prefer doctor_id from find_doctors. Returns slot_id + spoken time for each option, or nearest alternatives when the requested window is full.",
-        "url": "http://localhost:8000/tools/search_availability",
+        "url": "https://fmri-receptionist-backend.onrender.com/tools/search_availability",
         "speak_during_execution": true,
         "speak_after_execution": true,
         "parameters": {
@@ -87,7 +87,7 @@
         "type": "custom",
         "name": "book_appointment",
         "description": "Book a confirmed slot. Call only after the caller confirmed name, phone, slot, and type. On conflict returns alternatives.",
-        "url": "http://localhost:8000/tools/book_appointment",
+        "url": "https://fmri-receptionist-backend.onrender.com/tools/book_appointment",
         "speak_during_execution": true,
         "speak_after_execution": true,
         "parameters": {
@@ -129,7 +129,7 @@
         "type": "custom",
         "name": "lookup_appointments",
         "description": "Find the caller's upcoming appointments by their 10-digit phone number. Needed before reschedule or cancel.",
-        "url": "http://localhost:8000/tools/lookup_appointments",
+        "url": "https://fmri-receptionist-backend.onrender.com/tools/lookup_appointments",
         "speak_during_execution": true,
         "speak_after_execution": true,
         "parameters": {
@@ -149,7 +149,7 @@
         "type": "custom",
         "name": "reschedule_appointment",
         "description": "Move an existing appointment to a new slot_id from search_availability. On conflict returns alternatives.",
-        "url": "http://localhost:8000/tools/reschedule_appointment",
+        "url": "https://fmri-receptionist-backend.onrender.com/tools/reschedule_appointment",
         "speak_during_execution": true,
         "speak_after_execution": true,
         "parameters": {
@@ -176,7 +176,7 @@
         "type": "custom",
         "name": "cancel_appointment",
         "description": "Cancel an existing appointment after the caller confirms.",
-        "url": "http://localhost:8000/tools/cancel_appointment",
+        "url": "https://fmri-receptionist-backend.onrender.com/tools/cancel_appointment",
         "speak_during_execution": true,
         "speak_after_execution": true,
         "parameters": {
@@ -200,10 +200,9 @@
   "agent": {
     "agent_name": "FMRI Gurgaon Receptionist",
     "language": "en-IN",
-    "voice_id": "11labs-Anaya",
+    "voice_id": "11labs-Monika",
     "responsiveness": 0.8,
     "interruption_sensitivity": 0.8,
-    "enable_backchannel": true,
-    "normalize_for_speech": true
+    "enable_backchannel": true
   }
 }
