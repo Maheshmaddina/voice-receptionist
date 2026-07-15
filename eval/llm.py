@@ -22,7 +22,7 @@ GEMINI_BASE = "https://generativelanguage.googleapis.com/v1beta/openai/"
 
 def completion(client: OpenAI, **kwargs):
     """chat.completions.create with free-tier-friendly 429 backoff."""
-    for attempt in range(8):
+    for attempt in range(16):
         try:
             return client.chat.completions.create(**kwargs)
         except RateLimitError as e:

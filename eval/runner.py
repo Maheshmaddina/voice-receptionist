@@ -41,7 +41,8 @@ BEGIN_MESSAGE = ("Thank you for calling Fortis Memorial Research Institute, Gurg
                  "This is Diya. How may I help you today?")
 
 client, MODEL = make_client()
-http = httpx.Client(timeout=20)
+# generous timeout: free-tier hosts cold-start (~50s) after idle
+http = httpx.Client(timeout=90)
 
 
 def openai_tools() -> list[dict]:
@@ -60,10 +61,16 @@ def chat(messages: list[dict], tools: list[dict] | None = None):
 
 
 def call_tool(name: str, args: dict) -> tuple[dict, float]:
-    t0 = time.perf_counter()
-    r = http.post(f"{BACKEND}/tools/{name}", json={"args": args})
-    ms = (time.perf_counter() - t0) * 1000
-    return (r.json() if r.status_code == 200 else {"error": f"HTTP {r.status_code}"}), ms
+    for attempt in (1, 2, 3):
+        t0 = time.perf_counter()
+        try:
+            r = http.post(f"{BACKEND}/tools/{name}", json={"args": args})
+            ms = (time.perf_counter() - t0) * 1000
+            return (r.json() if r.status_code == 200 else {"error": f"HTTP {r.status_code}"}), ms
+        except httpx.TransportError as e:
+            if attempt == 3:
+                return {"error": f"backend unreachable: {type(e).__name__}"}, 0.0
+            time.sleep(3 * attempt)
 
 
 def db_state(phone: str) -> dict:
@@ -232,6 +239,8 @@ def run_scenario(scenario: dict, out_dir: Path) -> dict:
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--only", help="run a single scenario id")
+    ap.add_argument("--resume", action="store_true",
+                    help="skip scenarios that already have a results file (quota-friendly)")
     args = ap.parse_args()
 
     assert http.get(f"{BACKEND}/health").json().get("ok"), "backend not reachable"
@@ -244,7 +253,14 @@ def main() -> None:
     if args.only:
         scenarios = [s for s in scenarios if s["id"] == args.only]
 
-    results = [run_scenario(s, out_dir) for s in scenarios]
+    for s in scenarios:
+        if args.resume and (out_dir / f"{s['id']}.json").exists():
+            print(f"skip {s['id']} (already done)", file=sys.stderr)
+            continue
+        run_scenario(s, out_dir)
+
+    results = [json.loads((out_dir / f"{s['id']}.json").read_text())
+               for s in scenarios if (out_dir / f"{s['id']}.json").exists()]
     summary = {
         "ran_at": datetime.now(IST).isoformat(),
         "model": MODEL,
