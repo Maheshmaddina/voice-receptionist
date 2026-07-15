@@ -63,15 +63,24 @@ Retell's STT/TTS/turn-taking are pre-optimized; our levers are the ones we own:
 4. **Measured, not claimed** — `eval/live/latency.py` pulls per-call e2e/LLM/TTS
    percentiles from real calls; the submission quotes p50/p90 from that report.
 
+## Try it live (no setup)
+
+- **Talk to the agent:** https://fmri-receptionist-backend.onrender.com/ — click *Call the receptionist* (browser voice call against the deployed agent + database).
+- **See the booking you just made:** `curl "https://fmri-receptionist-backend.onrender.com/debug/appointments?phone=<your number>"`
+
 ## Run it
 
 ```bash
 make setup                  # venv + deps
 make serve                  # backend on :8000 (SQLite, auto-seeds) — or: docker compose up
 make test                   # Layer 1: 14 deterministic invariant tests
-GEMINI_API_KEY=... make eval      # Layer 2: simulated calls + judge → eval/RESULTS.md
-                                  #   (free key: aistudio.google.com; OPENAI_API_KEY also works)
+make eval                   # Layer 2: simulated calls + judge → eval/RESULTS.md
 ```
+
+Layer 2 needs any OpenAI-compatible LLM. Fully free option (what the committed
+results used): install [Ollama](https://ollama.com), `ollama pull qwen3:4b`, then
+`EVAL_API_KEY=ollama EVAL_API_BASE=http://localhost:11434/v1 EVAL_MODEL=qwen3:4b make eval`.
+Hosted keys work too: `GEMINI_API_KEY=...` or `OPENAI_API_KEY=...`.
 
 Deploy: host the backend anywhere public (Dockerfile provided), then
 `RETELL_API_KEY=... BACKEND_URL=https://... make deploy-agent` creates/updates the

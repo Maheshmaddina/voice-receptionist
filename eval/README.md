@@ -7,7 +7,8 @@ Layer 3 needs a Retell key and real calls.
 | Layer | What it tests | Command | Needs |
 |---|---|---|---|
 | 1 | Booking-engine invariants (deterministic pytest) | `make test` | nothing |
-| 2 | Full conversations: simulated patient ↔ the real agent brain + live tools | `make eval` | `GEMINI_API_KEY` (or `OPENAI_API_KEY`), running backend |
+| 2 | Full conversations: simulated patient ↔ the real agent brain + live tools | `make eval` | any OpenAI-compatible LLM (free local option: Ollama `qwen3:4b`), running backend |
+| 2.5 | Scripted conversation through the **deployed** Retell brain (server-side GPT-4.1 + live webhooks), verified in the production DB | `python -m eval.live.chat_smoke` | `RETELL_API_KEY` |
 | 3 | Real voice calls: measured e2e/LLM/TTS latency + transcripts | `python -m eval.live.latency` | `RETELL_API_KEY`, a few live calls |
 
 ## What "performs well" means here, and why
