@@ -244,6 +244,8 @@ def main() -> None:
     args = ap.parse_args()
 
     assert http.get(f"{BACKEND}/health").json().get("ok"), "backend not reachable"
+    if not args.resume:  # clean transactional slate so assertions are deterministic
+        print("reset:", http.post(f"{BACKEND}/debug/reset").json(), file=sys.stderr)
     out_dir = HERE / "results"
     out_dir.mkdir(exist_ok=True)
 

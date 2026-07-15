@@ -240,6 +240,20 @@ async def cancel_appointment(request: Request, db: Session = Depends(get_db)):
     return response
 
 
+# ---- eval support: reset transactional state (demo data only — doctors/slots stay) ----
+@router.post("/debug/reset")
+async def debug_reset(db: Session = Depends(get_db)):
+    from sqlalchemy import delete, update as sql_update
+
+    n = db.execute(delete(Appointment)).rowcount
+    db.execute(delete(Patient))
+    db.execute(delete(IdempotencyRecord))
+    # reopen slots claimed by bookings; seeded 'blocked' slots stay blocked
+    db.execute(sql_update(Slot).where(Slot.status == "booked").values(status="open"))
+    db.commit()
+    return {"reset": True, "appointments_deleted": n}
+
+
 # ---- ground-truth reader for the eval harness & demos (demo data only) ----
 @router.get("/debug/appointments")
 async def debug_appointments(phone: str, db: Session = Depends(get_db)):
