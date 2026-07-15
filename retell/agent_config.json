@@ -1,0 +1,209 @@
+{
+  "llm": {
+    "model": "gpt-4.1",
+    "model_temperature": 0,
+    "model_high_priority": true,
+    "general_prompt": "## Identity\nYou are Diya, the phone receptionist at Fortis Memorial Research Institute (FMRI), Gurgaon \u2014 Sector 44, opposite HUDA City Centre. Current time: {{current_time}} (IST).\n\n## Voice style\n- Short, natural sentences; one question at a time.\n- Warm and efficient. Plain spoken words \u2014 no lists, symbols, or written formatting.\n- Say dates and times naturally, like \"Thursday the sixteenth at ten thirty in the morning\".\n- Read phone numbers back digit by digit.\n\n## What you do\nHelp callers book, reschedule, or cancel appointments, check their existing appointments, and answer basics about the hospital: departments, OPD timings, consultation fees. Nothing else. No medical advice \u2014 for anything urgent, tell them to call 112 or come straight to Emergency.\n\n## Ground rules\n1. Never invent doctors, departments, availability, or fees. Everything you state must come from a tool result.\n2. Flows: to book \u2014 find_doctors, then search_availability, then book_appointment. To change or cancel \u2014 lookup_appointments first.\n3. Before booking you need: full name, 10-digit mobile number, a chosen slot, and appointment type (new consultation, follow-up, or teleconsultation). Read all of it back and get a clear yes before calling book_appointment.\n4. If the caller changes their mind mid-call, follow their latest request and search again \u2014 never reuse stale options.\n5. If a tool returns an error or no availability: one short apology, then immediately offer the alternatives or nearest options from the tool result. Never leave the caller without a next step.\n6. Offer at most three options at a time. If several doctors match, ask the caller to choose.\n7. For book, reschedule, or cancel calls, pass idempotency_key: a random 8-character string you invent, unique per action.\n8. Before ending, summarize the outcome \u2014 doctor, day and time \u2014 and ask if there is anything else.\n",
+    "begin_message": "Thank you for calling Fortis Memorial Research Institute, Gurgaon. This is Diya. How may I help you today?",
+    "general_tools": [
+      {
+        "type": "custom",
+        "name": "get_clinic_info",
+        "description": "Hospital address, OPD hours, today's date, and the full list of departments.",
+        "url": "http://localhost:8000/tools/get_clinic_info",
+        "speak_during_execution": false,
+        "speak_after_execution": true,
+        "parameters": {
+          "type": "object",
+          "properties": {},
+          "required": []
+        }
+      },
+      {
+        "type": "custom",
+        "name": "find_doctors",
+        "description": "Find doctors by (possibly misspelled) name and/or department. Returns id, designation, department, experience, and consultation fee.",
+        "url": "http://localhost:8000/tools/find_doctors",
+        "speak_during_execution": true,
+        "speak_after_execution": true,
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "query": {
+              "type": "string",
+              "description": "Doctor name as heard, e.g. 'doctor sandhu'"
+            },
+            "department": {
+              "type": "string",
+              "description": "Department or specialty, e.g. 'Cardiac Sciences', 'skin'"
+            }
+          },
+          "required": []
+        }
+      },
+      {
+        "type": "custom",
+        "name": "search_availability",
+        "description": "Open slots for a doctor. Prefer doctor_id from find_doctors. Returns slot_id + spoken time for each option, or nearest alternatives when the requested window is full.",
+        "url": "http://localhost:8000/tools/search_availability",
+        "speak_during_execution": true,
+        "speak_after_execution": true,
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "doctor_id": {
+              "type": "integer",
+              "description": "Doctor id from find_doctors"
+            },
+            "doctor_name": {
+              "type": "string",
+              "description": "Fallback if no id yet"
+            },
+            "department": {
+              "type": "string",
+              "description": "Fallback department search"
+            },
+            "date_from": {
+              "type": "string",
+              "description": "ISO datetime lower bound, e.g. 2026-07-20T00:00:00"
+            },
+            "date_to": {
+              "type": "string",
+              "description": "ISO datetime upper bound"
+            },
+            "time_of_day": {
+              "type": "string",
+              "enum": [
+                "morning",
+                "afternoon",
+                "evening"
+              ]
+            }
+          },
+          "required": []
+        }
+      },
+      {
+        "type": "custom",
+        "name": "book_appointment",
+        "description": "Book a confirmed slot. Call only after the caller confirmed name, phone, slot, and type. On conflict returns alternatives.",
+        "url": "http://localhost:8000/tools/book_appointment",
+        "speak_during_execution": true,
+        "speak_after_execution": true,
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "slot_id": {
+              "type": "integer",
+              "description": "slot_id from search_availability"
+            },
+            "patient_name": {
+              "type": "string"
+            },
+            "patient_phone": {
+              "type": "string",
+              "description": "10-digit mobile number"
+            },
+            "appointment_type": {
+              "type": "string",
+              "enum": [
+                "new_consultation",
+                "follow_up",
+                "teleconsultation"
+              ]
+            },
+            "idempotency_key": {
+              "type": "string",
+              "description": "Random 8-char string, unique per booking action"
+            }
+          },
+          "required": [
+            "slot_id",
+            "patient_name",
+            "patient_phone",
+            "appointment_type"
+          ]
+        }
+      },
+      {
+        "type": "custom",
+        "name": "lookup_appointments",
+        "description": "Find the caller's upcoming appointments by their 10-digit phone number. Needed before reschedule or cancel.",
+        "url": "http://localhost:8000/tools/lookup_appointments",
+        "speak_during_execution": true,
+        "speak_after_execution": true,
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "patient_phone": {
+              "type": "string",
+              "description": "10-digit mobile number"
+            }
+          },
+          "required": [
+            "patient_phone"
+          ]
+        }
+      },
+      {
+        "type": "custom",
+        "name": "reschedule_appointment",
+        "description": "Move an existing appointment to a new slot_id from search_availability. On conflict returns alternatives.",
+        "url": "http://localhost:8000/tools/reschedule_appointment",
+        "speak_during_execution": true,
+        "speak_after_execution": true,
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "appointment_id": {
+              "type": "integer"
+            },
+            "new_slot_id": {
+              "type": "integer"
+            },
+            "idempotency_key": {
+              "type": "string",
+              "description": "Random 8-char string, unique per action"
+            }
+          },
+          "required": [
+            "appointment_id",
+            "new_slot_id"
+          ]
+        }
+      },
+      {
+        "type": "custom",
+        "name": "cancel_appointment",
+        "description": "Cancel an existing appointment after the caller confirms.",
+        "url": "http://localhost:8000/tools/cancel_appointment",
+        "speak_during_execution": true,
+        "speak_after_execution": true,
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "appointment_id": {
+              "type": "integer"
+            },
+            "idempotency_key": {
+              "type": "string",
+              "description": "Random 8-char string, unique per action"
+            }
+          },
+          "required": [
+            "appointment_id"
+          ]
+        }
+      }
+    ]
+  },
+  "agent": {
+    "agent_name": "FMRI Gurgaon Receptionist",
+    "language": "en-IN",
+    "voice_id": "11labs-Anaya",
+    "responsiveness": 0.8,
+    "interruption_sensitivity": 0.8,
+    "enable_backchannel": true,
+    "normalize_for_speech": true
+  }
+}
