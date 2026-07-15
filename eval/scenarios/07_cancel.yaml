@@ -1,0 +1,12 @@
+id: cancel
+description: Caller cancels an existing appointment.
+patient:
+  persona: Farah Khan, 29. Phone 9811111007. Recovered, no longer needs the visit.
+  goal: Cancel your existing appointment. Confirm the cancellation and end the call politely. Do not book anything new.
+setup:
+  - {department: Internal Medicine, patient_name: Farah Khan, phone: "9811111007"}
+assertions:
+  - {type: cancelled, phone: "9811111007"}
+  - {type: booked_count, phone: "9811111007", equals: 0}
+judge:
+  - Did the agent verify which appointment to cancel before cancelling?

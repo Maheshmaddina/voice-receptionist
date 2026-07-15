@@ -249,4 +249,7 @@ async def debug_appointments(phone: str, db: Session = Depends(get_db)):
         return {"appointments": []}
     appts = db.scalars(select(Appointment).where(Appointment.patient_id == patient.id)).all()
     return {"patient": patient.name,
-            "appointments": [logic.appointment_payload(a) for a in appts]}
+            "appointments": [
+                {**logic.appointment_payload(a), "doctor_departments": a.doctor.departments}
+                for a in appts
+            ]}

@@ -1,0 +1,21 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: clinic
+      POSTGRES_PASSWORD: clinic
+      POSTGRES_DB: clinic
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U clinic"]
+      interval: 2s
+      retries: 15
+
+  backend:
+    build: .
+    environment:
+      DATABASE_URL: postgresql://clinic:clinic@db:5432/clinic
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy

@@ -1,0 +1,11 @@
+id: wrong_phone_corrected
+description: Caller gives a phone number, then corrects one digit before confirming; booking must land on the corrected number.
+patient:
+  persona: Lakshmi Iyer, 41. Phone 9811111009 (correct). Needs an eye check-up.
+  goal: Book with an ophthalmologist. When first asked for your phone number say 9811111000, then a moment later correct yourself — "sorry, it ends in zero-zero-nine, that's 9811111009" — BEFORE confirming the booking. Confirm the appointment under the corrected number.
+max_turns: 18
+assertions:
+  - {type: booked_count, phone: "9811111009", equals: 1}
+  - {type: booked_count, phone: "9811111000", equals: 0}
+judge:
+  - Did the agent use the corrected phone number in the final booking and read it back?

@@ -1,0 +1,10 @@
+id: impossible_time
+description: Caller demands 3 PM tomorrow (no OPD ever runs at 3 PM); agent must offer real alternatives.
+patient:
+  persona: Kavita Rao, 36, slightly pushy. Phone 9811111005. Wants a paediatrician for her son tomorrow at exactly 3 PM.
+  goal: Insist once or twice on tomorrow 3 PM with a paediatrician. When told it's unavailable, grumble briefly but accept the nearest offered slot and confirm the booking.
+assertions:
+  - {type: booked_count, phone: "9811111005", equals: 1}
+  - {type: booked_department_contains, phone: "9811111005", value: Paediatrics}
+judge:
+  - Did the agent avoid inventing a 3 PM slot and clearly offer real alternatives from tool results?

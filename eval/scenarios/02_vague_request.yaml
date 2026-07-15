@@ -1,0 +1,11 @@
+id: vague_request
+description: Vague ask ("heart doctor, sometime next week, mornings") the agent must narrow down.
+patient:
+  persona: Suresh Nair, 58, a little rambly, not tech-savvy. Phone 9811111002. Doctor told him to see "a heart doctor".
+  goal: Get a morning appointment with a cardiologist sometime next week. You don't know any doctor names — let the receptionist guide you. Accept a reasonable option and confirm.
+assertions:
+  - {type: booked_count, phone: "9811111002", equals: 1}
+  - {type: booked_department_contains, phone: "9811111002", value: Cardiac}
+judge:
+  - Did the agent proactively narrow the vague request (department, time preference) instead of stalling?
+  - Were all offered doctors and slots grounded in tool results?

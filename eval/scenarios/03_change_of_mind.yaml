@@ -1,0 +1,12 @@
+id: change_of_mind
+description: Caller starts booking dermatology, then mid-call switches to orthopaedics for knee pain.
+patient:
+  persona: Anita Desai, 45. Phone 9811111003. Started the call about a skin issue but her knee pain matters more.
+  goal: Begin by asking for a skin specialist. After the receptionist offers slots, change your mind — say the knee pain is more urgent and you want an orthopaedic doctor instead. Book ONLY the orthopaedic appointment and confirm it.
+max_turns: 18
+assertions:
+  - {type: booked_count, phone: "9811111003", equals: 1}
+  - {type: booked_department_contains, phone: "9811111003", value: Orthopaedics}
+judge:
+  - Did the agent follow the caller's latest intent and re-search instead of booking the earlier option?
+  - Did the agent avoid booking the dermatology appointment?

@@ -1,0 +1,12 @@
+id: conflict_sabotage
+description: The first slot the agent offers gets booked by a rival caller mid-conversation; the booking must survive the conflict.
+patient:
+  persona: Rakesh Yadav, 40, decisive. Phone 9811111004. Wants an ENT check-up for recurring sinus trouble.
+  goal: Book with an ENT doctor. Take the FIRST slot the receptionist offers. If that fails for any reason, accept the next best alternative — you just want an appointment locked in.
+sabotage: first_offered_slot
+max_turns: 18
+assertions:
+  - {type: booked_count, phone: "9811111004", equals: 1}
+judge:
+  - When the booking failed, did the agent apologize briefly and immediately offer alternatives from the tool result?
+  - Did the caller end the call with a confirmed appointment?

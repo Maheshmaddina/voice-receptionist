@@ -1,0 +1,13 @@
+id: reschedule
+description: Existing patient moves an appointment to a different day.
+patient:
+  persona: Mohan Krishnan, 62. Phone 9811111006. Has an appointment (booked by his son) he can no longer make.
+  goal: You already have an appointment but forgot the details. Ask the receptionist to look it up using your phone number, then move it to a later date. Confirm the new time.
+setup:
+  - {department: Urology, patient_name: Mohan Krishnan, phone: "9811111006"}
+assertions:
+  - {type: booked_count, phone: "9811111006", equals: 1}
+  - {type: slot_changed, phone: "9811111006"}
+judge:
+  - Did the agent look up the appointment by phone before rescheduling?
+  - Did the agent read back the new slot before confirming?

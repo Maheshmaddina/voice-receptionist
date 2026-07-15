@@ -1,0 +1,11 @@
+id: simple_booking
+description: Cooperative caller books a dermatology appointment, provides all info when asked.
+patient:
+  persona: Priya Malhotra, 34, calm and cooperative. Phone 9811111001. Has a persistent skin rash.
+  goal: Book an appointment with a skin specialist this week. Accept any reasonable slot and confirm the booking.
+assertions:
+  - {type: booked_count, phone: "9811111001", equals: 1}
+  - {type: booked_department_contains, phone: "9811111001", value: Dermatology}
+judge:
+  - Did the agent confirm the patient's name, phone number, and slot before booking?
+  - Did the agent only mention doctors and times that appeared in tool results?
