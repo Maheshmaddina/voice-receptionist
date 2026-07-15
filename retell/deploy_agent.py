@@ -87,12 +87,13 @@ def main() -> None:
         print("created agent", agent.agent_id)
     state["agent_id"] = agent.agent_id
 
+    inbound = [{"agent_id": agent.agent_id, "weight": 1}]
     if args.buy_number and not state.get("phone_number"):
-        number = client.phone_number.create(inbound_agent_id=agent.agent_id)
+        number = client.phone_number.create(inbound_agents=inbound)
         state["phone_number"] = number.phone_number
         print("provisioned number:", number.phone_number)
     elif state.get("phone_number"):
-        client.phone_number.update(state["phone_number"], inbound_agent_id=agent.agent_id)
+        client.phone_number.update(state["phone_number"], inbound_agents=inbound)
         print("number bound:", state["phone_number"])
 
     STATE_FILE.write_text(json.dumps(state, indent=2))

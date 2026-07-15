@@ -9,41 +9,24 @@ Usage: python -m eval.judge   (after eval.runner has written eval/results/*.json
 from __future__ import annotations
 
 import json
-import os
+import re
 import sys
 from pathlib import Path
 
-import anthropic
+from eval.llm import make_client
 
 HERE = Path(__file__).resolve().parent
-MODEL = os.environ.get("EVAL_MODEL", "claude-opus-4-8")
-client = anthropic.Anthropic()
+client, MODEL = make_client()
 
 GLOBAL_QUESTIONS = [
     "Groundedness: did every doctor name, time, fee, and department the agent stated come from a tool result in the tool log (no invented facts)?",
     "Confirmation: did the agent read back name, phone, and slot and get a clear yes BEFORE any booking/reschedule/cancel tool call?",
 ]
 
-SCHEMA = {
-    "type": "object",
-    "properties": {
-        "verdicts": {
-            "type": "array",
-            "items": {
-                "type": "object",
-                "properties": {
-                    "question": {"type": "string"},
-                    "verdict": {"type": "string", "enum": ["yes", "no", "n/a"]},
-                    "reason": {"type": "string"},
-                },
-                "required": ["question", "verdict", "reason"],
-                "additionalProperties": False,
-            },
-        }
-    },
-    "required": ["verdicts"],
-    "additionalProperties": False,
-}
+
+def parse_json(text: str) -> dict:
+    m = re.search(r"\{.*\}", text, re.S)
+    return json.loads(m.group(0)) if m else {"verdicts": []}
 
 
 def judge_one(result: dict) -> list[dict]:
@@ -58,15 +41,17 @@ TRANSCRIPT:
 TOOL LOG (every backend call the agent made, with results):
 {tool_log}
 
-Answer each question with a strict yes/no (or n/a if the situation never arose), with a one-sentence reason:
+Answer each question strictly. Respond with ONLY this JSON, no prose:
+{{"verdicts": [{{"question": "...", "verdict": "yes|no|n/a", "reason": "one sentence"}}]}}
+
+Questions:
 {json.dumps(questions, indent=1)}"""
-    resp = client.messages.create(
-        model=MODEL, max_tokens=2000,
-        output_config={"format": {"type": "json_schema", "schema": SCHEMA}},
+    msg = client.chat.completions.create(
+        model=MODEL, temperature=0,
+        response_format={"type": "json_object"},
         messages=[{"role": "user", "content": prompt}],
-    )
-    text = next(b.text for b in resp.content if b.type == "text")
-    return json.loads(text)["verdicts"]
+    ).choices[0].message
+    return parse_json(msg.content or "").get("verdicts", [])
 
 
 def main() -> None:

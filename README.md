@@ -69,7 +69,8 @@ Retell's STT/TTS/turn-taking are pre-optimized; our levers are the ones we own:
 make setup                  # venv + deps
 make serve                  # backend on :8000 (SQLite, auto-seeds) — or: docker compose up
 make test                   # Layer 1: 14 deterministic invariant tests
-ANTHROPIC_API_KEY=... make eval   # Layer 2: simulated calls + judge → eval/RESULTS.md
+GEMINI_API_KEY=... make eval      # Layer 2: simulated calls + judge → eval/RESULTS.md
+                                  #   (free key: aistudio.google.com; OPENAI_API_KEY also works)
 ```
 
 Deploy: host the backend anywhere public (Dockerfile provided), then

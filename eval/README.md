@@ -1,12 +1,13 @@
 # Eval Harness
 
 Three layers, cheapest-to-run first. Layers 1–2 are fully re-runnable by anyone
-with the repo + an Anthropic API key; Layer 3 needs a Retell key and real calls.
+with the repo + any OpenAI-compatible LLM key (Gemini's free tier works);
+Layer 3 needs a Retell key and real calls.
 
 | Layer | What it tests | Command | Needs |
 |---|---|---|---|
 | 1 | Booking-engine invariants (deterministic pytest) | `make test` | nothing |
-| 2 | Full conversations: simulated patient ↔ the real agent brain + live tools | `make eval` | `ANTHROPIC_API_KEY`, running backend |
+| 2 | Full conversations: simulated patient ↔ the real agent brain + live tools | `make eval` | `GEMINI_API_KEY` (or `OPENAI_API_KEY`), running backend |
 | 3 | Real voice calls: measured e2e/LLM/TTS latency + transcripts | `python -m eval.live.latency` | `RETELL_API_KEY`, a few live calls |
 
 ## What "performs well" means here, and why
@@ -48,9 +49,10 @@ assignment requires. What text can't cover is listed below, honestly.
 - **No audio-domain failures in Layers 1–2**: STT misrecognition (Indian names
   and phone digits are the risky ones), barge-in, accents, background noise.
   Only Layer 3 touches these, with a small sample size.
-- **Model mismatch**: the text sim runs the prompt on Claude; the live agent
-  runs it on GPT-4.1 inside Retell. Prompt/tool/backend logic is shared, but
-  model-specific tool-calling quirks may differ.
+- **Model mismatch**: the text sim runs the prompt on whatever eval model you
+  configure (default Gemini Flash); the live agent runs it on GPT-4.1 inside
+  Retell. Prompt/tool/backend logic is shared, but model-specific tool-calling
+  quirks may differ.
 - **LLM judge variance**: judge verdicts can flip between runs; that's why DB
   state is the pass/fail signal and the judge is advisory.
 - **Simulated patients are polite**: they follow their persona; real callers
@@ -67,5 +69,6 @@ make eval           # terminal 2: runner + judge + report
 cat eval/RESULTS.md
 ```
 
-`EVAL_MODEL` overrides the simulator/judge model (default `claude-opus-4-8`).
+`EVAL_MODEL` overrides the simulator/judge model (default `gemini-2.5-flash`
+with a Gemini key; see `eval/llm.py` for the resolution order).
 Scenario transcripts and full tool logs land in `eval/results/`.

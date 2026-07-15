@@ -8,16 +8,13 @@ LLM plays the patient. Success is judged primarily by FINAL DB STATE
 Usage:
   BACKEND_URL=http://localhost:8000 python -m eval.runner [--only scenario_id]
 
-Env: ANTHROPIC_API_KEY (or `ant auth login` profile), BACKEND_URL, EVAL_MODEL.
+Env: GEMINI_API_KEY or OPENAI_API_KEY (see eval/llm.py), BACKEND_URL, EVAL_MODEL.
 """
 
 from __future__ import annotations
 
 import argparse
 import json
-import os
-import random
-import re
 import statistics
 import sys
 import time
@@ -25,16 +22,17 @@ from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
-import anthropic
 import httpx
+import os
 import yaml
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent / "retell"))
 from tools import tool_defs  # noqa: E402  (single source of truth with the voice agent)
 
+from eval.llm import make_client  # noqa: E402
+
 BACKEND = os.environ.get("BACKEND_URL", "http://localhost:8000").rstrip("/")
-MODEL = os.environ.get("EVAL_MODEL", "claude-opus-4-8")
 IST = ZoneInfo("Asia/Kolkata")
 MAX_AGENT_STEPS = 8  # tool-loop iterations per agent turn
 
@@ -42,15 +40,23 @@ AGENT_PROMPT = (HERE.parent / "retell" / "prompt.md").read_text()
 BEGIN_MESSAGE = ("Thank you for calling Fortis Memorial Research Institute, Gurgaon. "
                  "This is Diya. How may I help you today?")
 
-client = anthropic.Anthropic()
+client, MODEL = make_client()
 http = httpx.Client(timeout=20)
 
 
-def anthropic_tools() -> list[dict]:
+def openai_tools() -> list[dict]:
     return [
-        {"name": t["name"], "description": t["description"], "input_schema": t["parameters"]}
+        {"type": "function",
+         "function": {"name": t["name"], "description": t["description"],
+                      "parameters": t["parameters"]}}
         for t in tool_defs(BACKEND)
     ]
+
+
+def chat(messages: list[dict], tools: list[dict] | None = None):
+    return client.chat.completions.create(
+        model=MODEL, messages=messages, tools=tools or None, temperature=0.4,
+    ).choices[0].message
 
 
 def call_tool(name: str, args: dict) -> tuple[dict, float]:
@@ -87,25 +93,26 @@ class Sabotage:
 def agent_turn(history: list[dict], tools: list[dict], sabotage: Sabotage,
                tool_log: list[dict]) -> str:
     """Run the receptionist for one turn, executing tool calls against the backend."""
-    now = datetime.now(IST).strftime("%A, %d %B %Y, %I:%M %p")
-    system = AGENT_PROMPT.replace("{{current_time}}", now)
     for _ in range(MAX_AGENT_STEPS):
-        resp = client.messages.create(
-            model=MODEL, max_tokens=1024, system=system, tools=tools, messages=history,
-        )
-        history.append({"role": "assistant", "content": resp.content})
-        if resp.stop_reason != "tool_use":
-            return "".join(b.text for b in resp.content if b.type == "text")
-        results = []
-        for block in resp.content:
-            if block.type == "tool_use":
-                result, ms = call_tool(block.name, dict(block.input))
-                sabotage.maybe_fire(block.name, result)
-                tool_log.append({"tool": block.name, "args": dict(block.input),
-                                 "result": result, "latency_ms": round(ms, 1)})
-                results.append({"type": "tool_result", "tool_use_id": block.id,
-                                "content": json.dumps(result)})
-        history.append({"role": "user", "content": results})
+        msg = chat(history, tools)
+        if not msg.tool_calls:
+            history.append({"role": "assistant", "content": msg.content or ""})
+            return msg.content or ""
+        history.append({
+            "role": "assistant", "content": msg.content,
+            "tool_calls": [tc.model_dump() for tc in msg.tool_calls],
+        })
+        for tc in msg.tool_calls:
+            try:
+                args = json.loads(tc.function.arguments or "{}")
+            except json.JSONDecodeError:
+                args = {}
+            result, ms = call_tool(tc.function.name, args)
+            sabotage.maybe_fire(tc.function.name, result)
+            tool_log.append({"tool": tc.function.name, "args": args,
+                             "result": result, "latency_ms": round(ms, 1)})
+            history.append({"role": "tool", "tool_call_id": tc.id,
+                            "content": json.dumps(result)})
     return "I'm sorry, something went wrong on our side. Could you call back in a few minutes?"
 
 
@@ -122,12 +129,9 @@ Rules:
 - Never break character, never mention being an AI or a test.
 - When your goal is achieved (or clearly impossible), say a brief goodbye and append the token [HANGUP].
 - Output ONLY your next utterance."""
-    resp = client.messages.create(
-        model=MODEL, max_tokens=300, system=system,
-        messages=[{"role": "user",
-                   "content": f"Conversation so far:\n{convo}\n\nYour next utterance:"}],
-    )
-    return "".join(b.text for b in resp.content if b.type == "text").strip()
+    msg = chat([{"role": "system", "content": system},
+                {"role": "user", "content": f"Conversation so far:\n{convo}\n\nYour next utterance:"}])
+    return (msg.content or "").strip()
 
 
 def run_setup(scenario: dict) -> dict:
@@ -175,13 +179,15 @@ def check(assertion: dict, ctx: dict) -> tuple[bool, str]:
 def run_scenario(scenario: dict, out_dir: Path) -> dict:
     print(f"\n=== {scenario['id']} ===", file=sys.stderr)
     ctx = run_setup(scenario)
-    tools = anthropic_tools()
+    tools = openai_tools()
     sabotage = Sabotage(scenario.get("sabotage") == "first_offered_slot")
     tool_log: list[dict] = []
+    now = datetime.now(IST).strftime("%A, %d %B %Y, %I:%M %p")
     transcript = [{"speaker": "AGENT", "text": BEGIN_MESSAGE}]
-    history: list[dict] = [{"role": "user",
-                            "content": f"(The call connects. You greet the caller with: \"{BEGIN_MESSAGE}\")"}]
-    history.append({"role": "assistant", "content": BEGIN_MESSAGE})
+    history: list[dict] = [
+        {"role": "system", "content": AGENT_PROMPT.replace("{{current_time}}", now)},
+        {"role": "assistant", "content": BEGIN_MESSAGE},
+    ]
 
     for _ in range(scenario.get("max_turns", 14)):
         utterance = patient_turn(scenario, transcript)
