@@ -1,0 +1,2571 @@
+{
+  "source": "https://www.fortishealthcare.com/doctors/hospital/fortis-memorial-research-institute-gurgaon",
+  "hospital": "Fortis Memorial Research Institute, Gurgaon",
+  "address": "Sector 44, Opposite HUDA City Centre, Gurugram, Haryana 122002, India",
+  "scraped_at": "2026-07-15T05:16:15.149225+00:00",
+  "method": "Playwright Chromium rendering of the official Drupal doctor directory",
+  "doctor_count": 154,
+  "doctors": [
+    {
+      "name": "Dr. (Prof.) Amit Javed",
+      "designation": "Principal Director & HOD Lap GI, GI Onco, Bariatric & MIS Surgery",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "General Surgery",
+          "specialties": [
+            "Bariatric Surgery",
+            "General and Laparoscopic Surgery",
+            "General and Minimal Access Surgery",
+            "Robotic Surgery"
+          ]
+        },
+        {
+          "department": "Oncology",
+          "specialties": [
+            "GI Oncology",
+            "Surgical Oncology"
+          ]
+        }
+      ],
+      "experience_years": 25,
+      "consultation_fee_inr": 1500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-prof-amit-javed-11615"
+    },
+    {
+      "name": "Dr. (Col) Manjinder Sandhu",
+      "designation": "Principal Director Cardiology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Cardiac Sciences",
+          "specialties": [
+            "Interventional Cardiology"
+          ]
+        }
+      ],
+      "experience_years": 35,
+      "consultation_fee_inr": 2000,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-col-manjinder-sandhu-11484"
+    },
+    {
+      "name": "Dr. Ajay Kumar Kriplani",
+      "designation": "Principal Director & HOD Lap GI, GI Onco, Bariatric & MIS Surgery",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "General Surgery",
+          "specialties": [
+            "General and Laparoscopic Surgery",
+            "General and Minimal Access Surgery"
+          ]
+        },
+        {
+          "department": "Gastroenterology and Hepatobiliary Sciences",
+          "specialties": [
+            "GI, Minimal Access and Bariatric Surgery",
+            "Metabolic & Bariatric Surgery",
+            "Robotic Surgery"
+          ]
+        }
+      ],
+      "experience_years": 40,
+      "consultation_fee_inr": 1500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-ajay-kumar-kriplani-1299"
+    },
+    {
+      "name": "Dr. Anil Kumar Anand",
+      "designation": "Principal Director & HOD - Radiation Oncology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Oncology",
+          "specialties": [
+            "Radiation Oncology"
+          ]
+        }
+      ],
+      "experience_years": 31,
+      "consultation_fee_inr": 1500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-anil-kumar-anand-8122"
+    },
+    {
+      "name": "Dr. Anil Mandhani",
+      "designation": "Chairman-Urology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Urology",
+          "specialties": [
+            "Robotic Surgery",
+            "Uro-Oncology"
+          ]
+        },
+        {
+          "department": "Organ Transplant",
+          "specialties": [
+            "Kidney Transplant"
+          ]
+        }
+      ],
+      "experience_years": 35,
+      "consultation_fee_inr": 2000,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-anil-mandhani-4722"
+    },
+    {
+      "name": "Dr. Ankur BAHL",
+      "designation": "Principal Director Medical Oncology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Oncology",
+          "specialties": [
+            "Medical Oncology"
+          ]
+        }
+      ],
+      "experience_years": 20,
+      "consultation_fee_inr": 1800,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-ankur-bahl-8123"
+    },
+    {
+      "name": "Dr. Arvind Kumar Khurana",
+      "designation": "Principal Director Gastroenterology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Gastroenterology and Hepatobiliary Sciences",
+          "specialties": [
+            "Gastroenterology"
+          ]
+        }
+      ],
+      "experience_years": 35,
+      "consultation_fee_inr": 1500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-arvind-kumar-khurana-5313"
+    },
+    {
+      "name": "Dr. Atul Kumar Mittal",
+      "designation": "Chairman ENT",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "ENT",
+          "specialties": [
+            "ENT (Ear, Nose and Throat)"
+          ]
+        }
+      ],
+      "experience_years": 33,
+      "consultation_fee_inr": 2000,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-atul-kumar-mittal-2165"
+    },
+    {
+      "name": "Dr. Balkar Singh",
+      "designation": "Principal Director Anaesthesiology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Support Specialties",
+          "specialties": [
+            "Anaesthesia"
+          ]
+        }
+      ],
+      "experience_years": 30,
+      "consultation_fee_inr": 2500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-balkar-singh-839"
+    },
+    {
+      "name": "Dr. Biswajyoti Hazarika",
+      "designation": "Principal Director Surgical Oncology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Oncology",
+          "specialties": [
+            "Head and Neck Oncosurgery",
+            "Surgical Oncology"
+          ]
+        }
+      ],
+      "experience_years": 25,
+      "consultation_fee_inr": 1800,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-biswajyoti-hazarika-4458"
+    },
+    {
+      "name": "Dr. Gourdas Choudhuri",
+      "designation": "Chairman-Gastroenterology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Gastroenterology and Hepatobiliary Sciences",
+          "specialties": [
+            "Gastroenterology"
+          ]
+        }
+      ],
+      "experience_years": 42,
+      "consultation_fee_inr": 2000,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-gourdas-choudhuri-1185"
+    },
+    {
+      "name": "Dr. Ishita B.Sen",
+      "designation": "Principal Director Nuclear Medicine",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Nuclear Medicine",
+          "specialties": []
+        },
+        {
+          "department": "Oncology",
+          "specialties": []
+        }
+      ],
+      "experience_years": 26,
+      "consultation_fee_inr": 2500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-ishita-bsen-5479"
+    },
+    {
+      "name": "Dr. Jayant Arora",
+      "designation": "Principal Director & Unit Head Orthopaedics",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Orthopaedics",
+          "specialties": [
+            "Orthopaedic Oncology",
+            "Orthopaedics and Spine Surgery",
+            "Robotic and Computer navigated Joint reconstruction",
+            "Sports Medicine"
+          ]
+        }
+      ],
+      "experience_years": 26,
+      "consultation_fee_inr": 2500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-jayant-arora-2885"
+    },
+    {
+      "name": "Dr. Krishan Chugh",
+      "designation": "Principal Director & HOD- pediatrics",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Paediatrics",
+          "specialties": []
+        }
+      ],
+      "experience_years": 32,
+      "consultation_fee_inr": 2000,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-krishan-chugh-2508"
+    },
+    {
+      "name": "Dr. Manoj Kumar Goel",
+      "designation": "Principal Director & Unit Head - Pulmonology & Sleep Medicine",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Pulmonology",
+          "specialties": [
+            "Pulmonology and Critical care",
+            "Sleep Medicine"
+          ]
+        }
+      ],
+      "experience_years": 32,
+      "consultation_fee_inr": 2000,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-manoj-kumar-goel-5350"
+    },
+    {
+      "name": "Dr. Nitesh Rohatgi",
+      "designation": "Principal Director Medical Oncology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Oncology",
+          "specialties": [
+            "Medical Oncology"
+          ]
+        }
+      ],
+      "experience_years": 15,
+      "consultation_fee_inr": 1800,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-nitesh-rohatgi-8124"
+    },
+    {
+      "name": "Dr. Parul Maheshwari Sharma",
+      "designation": "Principal Director & HOD - Ophthalmology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Ophthalmology",
+          "specialties": []
+        }
+      ],
+      "experience_years": 18,
+      "consultation_fee_inr": 1600,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-parul-maheshwari-sharma-11613"
+    },
+    {
+      "name": "Dr. Prashant Saxena",
+      "designation": "Principal Director & Unit Head - Pulmonology & Sleep Medicine",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Pulmonology",
+          "specialties": [
+            "Pulmonology and Critical care",
+            "Sleep Medicine"
+          ]
+        }
+      ],
+      "experience_years": 22,
+      "consultation_fee_inr": 1800,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-prashant-saxena-10047"
+    },
+    {
+      "name": "Dr. Rahul Bhargava.",
+      "designation": "Principal Director & Chief - Hematology, Hemato Oncology & Bone Marrow Transplant",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Oncology",
+          "specialties": [
+            "Hemato-Oncology"
+          ]
+        },
+        {
+          "department": "Organ Transplant",
+          "specialties": [
+            "Haematology and BMT",
+            "Hemato-Oncology"
+          ]
+        },
+        {
+          "department": "Haematology",
+          "specialties": []
+        }
+      ],
+      "experience_years": 16,
+      "consultation_fee_inr": 1200,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-rahul-bhargava-8129"
+    },
+    {
+      "name": "Dr. Rakesh Kumar Gupta",
+      "designation": "Principal Director Radiology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Radiology",
+          "specialties": []
+        }
+      ],
+      "experience_years": 35,
+      "consultation_fee_inr": 2000,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-rakesh-kumar-gupta-5512"
+    },
+    {
+      "name": "Dr. Rama Joshi",
+      "designation": "Chairman - Gynae Oncology and Robotic Surgery",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Oncology",
+          "specialties": [
+            "Gynaecologic Oncology"
+          ]
+        }
+      ],
+      "experience_years": 30,
+      "consultation_fee_inr": 2000,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-rama-joshi-429"
+    },
+    {
+      "name": "Dr. Rana Patir",
+      "designation": "Chairman Neuro Surgery",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Neurosurgery",
+          "specialties": [
+            "Neuro and Spine Surgery"
+          ]
+        }
+      ],
+      "experience_years": 32,
+      "consultation_fee_inr": 2000,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-rana-patir-6059"
+    },
+    {
+      "name": "Dr. SANDEEP VAISHYA",
+      "designation": "Executive Director & HOD Neuro Surgery",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Neurosurgery",
+          "specialties": [
+            "Neuro and Spine Surgery"
+          ]
+        }
+      ],
+      "experience_years": 30,
+      "consultation_fee_inr": 2000,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-sandeep-vaishya-566"
+    },
+    {
+      "name": "Dr. Salil Jain",
+      "designation": "Principal Director & HOD Nephrology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Nephrology",
+          "specialties": []
+        },
+        {
+          "department": "Organ Transplant",
+          "specialties": [
+            "Kidney Transplant"
+          ]
+        }
+      ],
+      "experience_years": 25,
+      "consultation_fee_inr": 2200,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-salil-jain-5332"
+    },
+    {
+      "name": "Dr. Satish Koul",
+      "designation": "Principal Director & Unit Head – Internal Medicine",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Internal Medicine",
+          "specialties": [
+            "General Physician"
+          ]
+        }
+      ],
+      "experience_years": 22,
+      "consultation_fee_inr": 1800,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-satish-koul-7684"
+    },
+    {
+      "name": "Dr. Subhash Jangid",
+      "designation": "Principal Director & Unit Head Orthopaedics",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Orthopaedics",
+          "specialties": [
+            "Orthopaedic Oncology",
+            "Orthopaedics and Joint Replacement",
+            "Robotic and Computer navigated Joint reconstruction",
+            "Sports Medicine"
+          ]
+        }
+      ],
+      "experience_years": 27,
+      "consultation_fee_inr": 2500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-subhash-jangid-2853"
+    },
+    {
+      "name": "Dr. Udgeath Dhir",
+      "designation": "Principal Director Cardio Thoracic Vascular Surgery",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Cardiac Sciences",
+          "specialties": [
+            "Adult CTVS (Cardiothoracic and Vascular Surgery)",
+            "Heart Transplant"
+          ]
+        },
+        {
+          "department": "Organ Transplant",
+          "specialties": [
+            "Heart Transplant"
+          ]
+        }
+      ],
+      "experience_years": 18,
+      "consultation_fee_inr": 2000,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-udgeath-dhir-1338"
+    },
+    {
+      "name": "Dr. Vedant Kabra",
+      "designation": "Principal Director Surgical Oncology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Oncology",
+          "specialties": [
+            "Breast Oncology",
+            "Robotic Surgery",
+            "Surgical Oncology"
+          ]
+        }
+      ],
+      "experience_years": 25,
+      "consultation_fee_inr": 2500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-vedant-kabra-8279"
+    },
+    {
+      "name": "Dr. Vikas Dua",
+      "designation": "Principal Director & Head - Pediatric Hematology, Hemato Oncology & Bone Marrow Transplant",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Organ Transplant",
+          "specialties": [
+            "Haematology and BMT"
+          ]
+        },
+        {
+          "department": "Haematology",
+          "specialties": [
+            "Paediatric Haematology and BMT"
+          ]
+        },
+        {
+          "department": "Paediatrics",
+          "specialties": [
+            "Paediatric Oncology"
+          ]
+        }
+      ],
+      "experience_years": 16,
+      "consultation_fee_inr": 1200,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-vikas-dua-705"
+    },
+    {
+      "name": "Dr. Vinod Raina",
+      "designation": "Chairman Oncosciences",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Oncology",
+          "specialties": [
+            "Medical Oncology"
+          ]
+        }
+      ],
+      "experience_years": 40,
+      "consultation_fee_inr": 3000,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-vinod-raina-8125"
+    },
+    {
+      "name": "Dr. Vivek Vij",
+      "designation": "Chairman Liver Transplant",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Liver Transplant and Hepatobiliary Sciences",
+          "specialties": []
+        },
+        {
+          "department": "Organ Transplant",
+          "specialties": [
+            "Liver Transplant"
+          ]
+        }
+      ],
+      "experience_years": 25,
+      "consultation_fee_inr": 2500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-vivek-vij-1016"
+    },
+    {
+      "name": "Dr. Amitabh Parti",
+      "designation": "Senior Director & Unit Head - Internal Medicine",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Internal Medicine",
+          "specialties": []
+        }
+      ],
+      "experience_years": 32,
+      "consultation_fee_inr": 2000,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-amitabh-parti-1097"
+    },
+    {
+      "name": "Dr. Anand Kumar",
+      "designation": "Senior Director Anaesthesia",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Cardiac Sciences",
+          "specialties": [
+            "Adult CTVS (Cardiothoracic and Vascular Surgery)"
+          ]
+        }
+      ],
+      "experience_years": 21,
+      "consultation_fee_inr": 2500,
+      "profile_url": null
+    },
+    {
+      "name": "Dr. Anuj Chawla",
+      "designation": "Senior Director Orthopaedics",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Orthopaedics",
+          "specialties": []
+        }
+      ],
+      "experience_years": 21,
+      "consultation_fee_inr": 1600,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-anuj-chawla-14964"
+    },
+    {
+      "name": "Dr. Debashish Chanda",
+      "designation": "Senior Director & Unit Head Orthopaedics",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Orthopaedics",
+          "specialties": [
+            "Orthopaedic Oncology",
+            "Orthopaedics and Joint Replacement",
+            "Robotic and Computer navigated Joint reconstruction"
+          ]
+        }
+      ],
+      "experience_years": 22,
+      "consultation_fee_inr": 2000,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-debashish-chanda-14965"
+    },
+    {
+      "name": "Dr. Nikhil Kumar",
+      "designation": "Senior Director Cardiology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Cardiac Sciences",
+          "specialties": [
+            "Interventional Cardiology"
+          ]
+        }
+      ],
+      "experience_years": 39,
+      "consultation_fee_inr": 2000,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-nikhil-kumar-307"
+    },
+    {
+      "name": "Dr. Nitika Sobti",
+      "designation": "Senior Director Obstetrics & Gynaecology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Obstetrics and Gynaecology",
+          "specialties": []
+        }
+      ],
+      "experience_years": 28,
+      "consultation_fee_inr": 1800,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-nitika-sobti-13541"
+    },
+    {
+      "name": "Dr. Sandeep Dewan",
+      "designation": "Senior Director & HOD - Critical Care",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Critical Care",
+          "specialties": []
+        }
+      ],
+      "experience_years": 24,
+      "consultation_fee_inr": 2000,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-sandeep-dewan-1289"
+    },
+    {
+      "name": "Dr. Suneeta Mittal",
+      "designation": "Senior Director & HOD Obstetrics & Gynaecology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Obstetrics and Gynaecology",
+          "specialties": [
+            "Robotic Surgery"
+          ]
+        }
+      ],
+      "experience_years": 57,
+      "consultation_fee_inr": 2500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-suneeta-mittal-1351"
+    },
+    {
+      "name": "Dr. Vikram Sharma",
+      "designation": "Senior Director Urology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Urology",
+          "specialties": [
+            "Uro-Oncology"
+          ]
+        }
+      ],
+      "experience_years": 39,
+      "consultation_fee_inr": 3000,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-vikram-sharma-231"
+    },
+    {
+      "name": "Dr. Vinayak Agrawal",
+      "designation": "Senior Director & Head of Non-Invasive Cardiology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Cardiac Sciences",
+          "specialties": [
+            "Non-Invasive Cardiology"
+          ]
+        }
+      ],
+      "experience_years": 24,
+      "consultation_fee_inr": 1800,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-vinayak-agrawal-5754"
+    },
+    {
+      "name": "Dr. Abhay Inderjit Ahluwalia",
+      "designation": "Director Endocrinology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Diabetology/Endocrinology",
+          "specialties": [
+            "Metabolic Surgery"
+          ]
+        }
+      ],
+      "experience_years": 34,
+      "consultation_fee_inr": 2000,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-abhay-inderjit-ahluwalia-14984"
+    },
+    {
+      "name": "Dr. Amal Roy Chaudhoory",
+      "designation": "Director Radiation Oncology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Oncology",
+          "specialties": [
+            "Radiation Oncology"
+          ]
+        }
+      ],
+      "experience_years": 23,
+      "consultation_fee_inr": 1500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-amal-roy-chaudhoory-2190"
+    },
+    {
+      "name": "Dr. Amit Chaudhry",
+      "designation": "Director Orthopaedics",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Orthopaedics",
+          "specialties": [
+            "Orthopaedic Oncology",
+            "Robotic and Computer navigated Joint reconstruction",
+            "Sports Medicine"
+          ]
+        }
+      ],
+      "experience_years": 14,
+      "consultation_fee_inr": 1800,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-amit-chaudhry-2887"
+    },
+    {
+      "name": "Dr. Anand Sinha",
+      "designation": "Director Paediatrics",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Paediatrics",
+          "specialties": [
+            "Paediatric Surgery"
+          ]
+        }
+      ],
+      "experience_years": 17,
+      "consultation_fee_inr": 1200,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-anand-sinha-666"
+    },
+    {
+      "name": "Dr. Gagan Deep Chhabra",
+      "designation": "Director & Unit Head – Nephrology & Kidney Transplant",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Nephrology",
+          "specialties": []
+        },
+        {
+          "department": "Organ Transplant",
+          "specialties": [
+            "Kidney Transplant"
+          ]
+        }
+      ],
+      "experience_years": 15,
+      "consultation_fee_inr": 1500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-gagan-deep-chhabra-11030"
+    },
+    {
+      "name": "Dr. Himanshu Verma",
+      "designation": "Director Vascular Surgery",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Vascular Surgery",
+          "specialties": []
+        }
+      ],
+      "experience_years": 17,
+      "consultation_fee_inr": 2000,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-himanshu-verma-3309"
+    },
+    {
+      "name": "Dr. Manavita Mahajan",
+      "designation": "Director Obstetrics & Gynaecology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Obstetrics and Gynaecology",
+          "specialties": []
+        }
+      ],
+      "experience_years": 10,
+      "consultation_fee_inr": 1200,
+      "profile_url": null
+    },
+    {
+      "name": "Dr. Manvinder Singh Sachdev",
+      "designation": "Director & Head - Pediatric Cardiology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Paediatrics",
+          "specialties": [
+            "Paediatric Cardiac Sciences"
+          ]
+        }
+      ],
+      "experience_years": 20,
+      "consultation_fee_inr": 1500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-manvinder-singh-sachdev-7406"
+    },
+    {
+      "name": "Dr. Mukta Kapila",
+      "designation": "Director & HOD -Obstetrics & Minimal Invasive Gynecology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Obstetrics and Gynaecology",
+          "specialties": [
+            "Robotic Surgery"
+          ]
+        }
+      ],
+      "experience_years": 36,
+      "consultation_fee_inr": 1800,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-mukta-kapila-9729"
+    },
+    {
+      "name": "Dr. Neetu Talwar",
+      "designation": "Director Paediatrics",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Paediatrics",
+          "specialties": [
+            "Paediatric Pulmonology"
+          ]
+        }
+      ],
+      "experience_years": 24,
+      "consultation_fee_inr": 1800,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-neetu-talwar-1969"
+    },
+    {
+      "name": "Dr. Nupur Gupta",
+      "designation": "Director Obstetrics & Gynaecology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Obstetrics and Gynaecology",
+          "specialties": []
+        }
+      ],
+      "experience_years": 24,
+      "consultation_fee_inr": 1500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-nupur-gupta-5693"
+    },
+    {
+      "name": "Dr. Pradeep Kumar Bansal",
+      "designation": "Director Urology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Organ Transplant",
+          "specialties": [
+            "Kidney Transplant"
+          ]
+        },
+        {
+          "department": "Urology",
+          "specialties": [
+            "Uro-Oncology"
+          ]
+        }
+      ],
+      "experience_years": 20,
+      "consultation_fee_inr": 2000,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-pradeep-kumar-bansal-1425"
+    },
+    {
+      "name": "Dr. Rajiv Kumar Erry",
+      "designation": "Director & Unit Head Internal Medicine",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Internal Medicine",
+          "specialties": []
+        }
+      ],
+      "experience_years": 25,
+      "consultation_fee_inr": 2000,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-rajiv-kumar-erry-1118"
+    },
+    {
+      "name": "Dr. Raman Abhi",
+      "designation": "Director & Unit Head Internal Medicine",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Internal Medicine",
+          "specialties": []
+        }
+      ],
+      "experience_years": 32,
+      "consultation_fee_inr": 2000,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-raman-abhi-2448"
+    },
+    {
+      "name": "Dr. Rashmi Pyasi",
+      "designation": "Director GI, Minimal Access & Bariatric Surgery",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "General Surgery",
+          "specialties": [
+            "General and Laparoscopic Surgery",
+            "General and Minimal Access Surgery"
+          ]
+        },
+        {
+          "department": "Gastroenterology and Hepatobiliary Sciences",
+          "specialties": [
+            "GI, Minimal Access and Bariatric Surgery",
+            "Metabolic & Bariatric Surgery",
+            "Robotic Surgery"
+          ]
+        }
+      ],
+      "experience_years": 26,
+      "consultation_fee_inr": 1000,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-rashmi-pyasi-1062"
+    },
+    {
+      "name": "Dr. Rinkesh Kumar Bansal",
+      "designation": "Director Gastroenterology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Gastroenterology and Hepatobiliary Sciences",
+          "specialties": [
+            "Gastroenterology"
+          ]
+        }
+      ],
+      "experience_years": 18,
+      "consultation_fee_inr": 1500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-rinkesh-kumar-bansal-246"
+    },
+    {
+      "name": "Dr. Samir Parikh",
+      "designation": "Director Mental Health & Behavioural Sciences",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Mental Health and Behavioural Sciences",
+          "specialties": [
+            "Psychiatry"
+          ]
+        }
+      ],
+      "experience_years": 25,
+      "consultation_fee_inr": 1500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-samir-parikh-8127"
+    },
+    {
+      "name": "Dr. Sanjat Chiwane",
+      "designation": "Director Cardiology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Cardiac Sciences",
+          "specialties": [
+            "Interventional Cardiology"
+          ]
+        }
+      ],
+      "experience_years": 19,
+      "consultation_fee_inr": 1800,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-sanjat-chiwane-11496"
+    },
+    {
+      "name": "Dr. Vaneet Parmar",
+      "designation": "Director Paediatrics",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Paediatrics",
+          "specialties": []
+        }
+      ],
+      "experience_years": 20,
+      "consultation_fee_inr": 1800,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-vaneet-parmar-6328"
+    },
+    {
+      "name": "Dr. Vijay Kant Dixit",
+      "designation": "Director Interventional Neuroradiology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Neurointerventional Radiology",
+          "specialties": []
+        }
+      ],
+      "experience_years": 22,
+      "consultation_fee_inr": 2000,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-vijay-kant-dixit-1119"
+    },
+    {
+      "name": "Dr. Vipul Nanda",
+      "designation": "Director Plastic Surgery",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Plastic and Reconstructive Surgery",
+          "specialties": []
+        }
+      ],
+      "experience_years": 32,
+      "consultation_fee_inr": 1800,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-vipul-nanda-12648"
+    },
+    {
+      "name": "Ms. Kamna Chhibber",
+      "designation": "Director Mental Health & Behavioural Sciences",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Mental Health and Behavioural Sciences",
+          "specialties": [
+            "Counselling Psychology"
+          ]
+        }
+      ],
+      "experience_years": 18,
+      "consultation_fee_inr": 2500,
+      "profile_url": null
+    },
+    {
+      "name": "Dr. (Maj) Shuchi Verma",
+      "designation": "Principal Consultant - Ophthalmology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Ophthalmology",
+          "specialties": []
+        }
+      ],
+      "experience_years": 20,
+      "consultation_fee_inr": 1500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-maj-shuchi-verma-4443"
+    },
+    {
+      "name": "Dr. Ajay Kumar",
+      "designation": "Additional Director Sleep Medicine & Pulmonology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Pulmonology",
+          "specialties": [
+            "Pulmonology and Critical care",
+            "Sleep Medicine"
+          ]
+        }
+      ],
+      "experience_years": 23,
+      "consultation_fee_inr": 1600,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-ajay-kumar-2319"
+    },
+    {
+      "name": "Dr. Ankit Jain",
+      "designation": "Additional Director Cardiology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Cardiac Sciences",
+          "specialties": [
+            "Electrophysiology"
+          ]
+        }
+      ],
+      "experience_years": 13,
+      "consultation_fee_inr": 1500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-ankit-jain-12578"
+    },
+    {
+      "name": "Dr. Ashish Gupta",
+      "designation": "Principal Consultant Cardiology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Cardiac Sciences",
+          "specialties": [
+            "Interventional Cardiology"
+          ]
+        }
+      ],
+      "experience_years": 15,
+      "consultation_fee_inr": 2500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-ashish-gupta-11490"
+    },
+    {
+      "name": "Dr. Bela Sharma",
+      "designation": "Additional Director Internal Medicine",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Internal Medicine",
+          "specialties": []
+        }
+      ],
+      "experience_years": 32,
+      "consultation_fee_inr": 1500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-bela-sharma-9928"
+    },
+    {
+      "name": "Dr. Deepak Goyal",
+      "designation": "Additional Director Gastroenterology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Paediatrics",
+          "specialties": []
+        },
+        {
+          "department": "Gastroenterology and Hepatobiliary Sciences",
+          "specialties": [
+            "Gastroenterology"
+          ]
+        }
+      ],
+      "experience_years": 15,
+      "consultation_fee_inr": 1600,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-deepak-goyal-5591"
+    },
+    {
+      "name": "Dr. Deepti Asthana",
+      "designation": "Additional Director Obstetrics & Gynaecology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Obstetrics and Gynaecology",
+          "specialties": []
+        }
+      ],
+      "experience_years": 19,
+      "consultation_fee_inr": 1500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-deepti-asthana-7339"
+    },
+    {
+      "name": "Dr. Mamata Pattnayak",
+      "designation": "Additional Director Obstetrics & Gynaecology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Obstetrics and Gynaecology",
+          "specialties": []
+        }
+      ],
+      "experience_years": 22,
+      "consultation_fee_inr": 1500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-mamata-pattnayak-1190"
+    },
+    {
+      "name": "Dr. Manoj KUMAR DHANGER",
+      "designation": "Additional Director Cardiology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Cardiac Sciences",
+          "specialties": [
+            "Interventional Cardiology"
+          ]
+        }
+      ],
+      "experience_years": 12,
+      "consultation_fee_inr": 1000,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-manoj-kumar-dhanger-8410"
+    },
+    {
+      "name": "Dr. Megha Pruthi",
+      "designation": "Additional Director & HOD, Pain & Palliative Medicine",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Pain and Palliative Medicine",
+          "specialties": []
+        }
+      ],
+      "experience_years": 11,
+      "consultation_fee_inr": 1800,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-megha-pruthi-9870"
+    },
+    {
+      "name": "Dr. Narola Yanger",
+      "designation": "Principal Consultant - GI, GI Oncology, Minimal Access & Bariatric Surgery",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "General Surgery",
+          "specialties": [
+            "Bariatric Surgery",
+            "General and Laparoscopic Surgery",
+            "General and Minimal Access Surgery"
+          ]
+        },
+        {
+          "department": "Gastroenterology and Hepatobiliary Sciences",
+          "specialties": [
+            "GI Oncology",
+            "GI, Minimal Access and Bariatric Surgery"
+          ]
+        }
+      ],
+      "experience_years": 10,
+      "consultation_fee_inr": 1500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-narola-yanger-11729"
+    },
+    {
+      "name": "Dr. Purnima Sood",
+      "designation": "Additional Director Ophthalmology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Ophthalmology",
+          "specialties": []
+        }
+      ],
+      "experience_years": 26,
+      "consultation_fee_inr": 1500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-purnima-sood-11643"
+    },
+    {
+      "name": "Dr. Ram Niwas Yadav",
+      "designation": "Additional Director Urology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Urology",
+          "specialties": [
+            "Robotic Surgery",
+            "Uro-Oncology"
+          ]
+        },
+        {
+          "department": "Organ Transplant",
+          "specialties": [
+            "Kidney Transplant"
+          ]
+        }
+      ],
+      "experience_years": 10,
+      "consultation_fee_inr": 1500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-ram-niwas-yadav-4720"
+    },
+    {
+      "name": "Dr. Sahil Kohli",
+      "designation": "Additional Director -Neurology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Neurology",
+          "specialties": []
+        }
+      ],
+      "experience_years": 19,
+      "consultation_fee_inr": 1600,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-sahil-kohli-13645"
+    },
+    {
+      "name": "Dr. Saurabh Yatish Bansal",
+      "designation": "Additional Director Neurology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Neurology",
+          "specialties": []
+        }
+      ],
+      "experience_years": 17,
+      "consultation_fee_inr": 1500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-saurabh-yatish-bansal-9949"
+    },
+    {
+      "name": "Dr. Sohini Chakraborty",
+      "designation": "Additional Director",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Haematology",
+          "specialties": [
+            "Paediatric Haematology and BMT"
+          ]
+        },
+        {
+          "department": "Paediatrics",
+          "specialties": [
+            "Paediatric Oncology"
+          ]
+        },
+        {
+          "department": "Organ Transplant",
+          "specialties": [
+            "Haematology and BMT"
+          ]
+        }
+      ],
+      "experience_years": 9,
+      "consultation_fee_inr": 2500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-sohini-chakraborty-9556"
+    },
+    {
+      "name": "Dr. Suman Karanth Gupta",
+      "designation": "Additional Director Medical Oncology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Oncology",
+          "specialties": [
+            "Medical Oncology"
+          ]
+        }
+      ],
+      "experience_years": 10,
+      "consultation_fee_inr": 1500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-suman-karanth-gupta-10826"
+    },
+    {
+      "name": "Dr. Sushil Kumar",
+      "designation": "Additional Director Surgical Oncology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Oncology",
+          "specialties": [
+            "Surgical Oncology"
+          ]
+        }
+      ],
+      "experience_years": 10,
+      "consultation_fee_inr": 1000,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-sushil-kumar-2905"
+    },
+    {
+      "name": "Dr. Swati Mittal",
+      "designation": "Additional Director Obstetrics & Gynaecology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Obstetrics and Gynaecology",
+          "specialties": [
+            "Robotic Surgery"
+          ]
+        }
+      ],
+      "experience_years": 22,
+      "consultation_fee_inr": 1500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-swati-mittal-422"
+    },
+    {
+      "name": "Dr. VINEET CHADHA",
+      "designation": "Additional Director",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "ENT",
+          "specialties": [
+            "ENT (Ear, Nose and Throat)"
+          ]
+        }
+      ],
+      "experience_years": 13,
+      "consultation_fee_inr": 1800,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-vineet-chadha-278"
+    },
+    {
+      "name": "Dr. Virender Sekhon",
+      "designation": "Additional Director Urology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Urology",
+          "specialties": [
+            "Paediatric Urology"
+          ]
+        }
+      ],
+      "experience_years": 14,
+      "consultation_fee_inr": 2000,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-virender-sekhon-11716"
+    },
+    {
+      "name": "Dr. Amit Sahni",
+      "designation": "Senior consultant Surgical Oncology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Oncology",
+          "specialties": [
+            "Surgical Oncology"
+          ]
+        }
+      ],
+      "experience_years": 11,
+      "consultation_fee_inr": 1500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-amit-sahni-6825"
+    },
+    {
+      "name": "Dr. Arjun Suresh Shenoi",
+      "designation": "Senior Consultant Cardiology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Cardiac Sciences",
+          "specialties": [
+            "Interventional Cardiology"
+          ]
+        }
+      ],
+      "experience_years": 10,
+      "consultation_fee_inr": 1200,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-arjun-suresh-shenoi-12846"
+    },
+    {
+      "name": "Dr. Ashwini Gadde",
+      "designation": "Senior Consultant Nephrology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Organ Transplant",
+          "specialties": [
+            "Kidney Transplant"
+          ]
+        },
+        {
+          "department": "Nephrology",
+          "specialties": []
+        }
+      ],
+      "experience_years": 10,
+      "consultation_fee_inr": 1500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-ashwini-gadde-8269"
+    },
+    {
+      "name": "Dr. Atul Sharma.",
+      "designation": "Senior Consultant Plastic Surgery",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Plastic and Reconstructive Surgery",
+          "specialties": []
+        }
+      ],
+      "experience_years": 17,
+      "consultation_fee_inr": 1500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-atul-sharma-14631"
+    },
+    {
+      "name": "Dr. Avinash .",
+      "designation": "Senior Consultant Plastic Surgery",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Plastic and Reconstructive Surgery",
+          "specialties": []
+        }
+      ],
+      "experience_years": 17,
+      "consultation_fee_inr": 1500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-avinash-12674"
+    },
+    {
+      "name": "Dr. Deepa Gupta",
+      "designation": "Senior Consultant Ophthalmology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Ophthalmology",
+          "specialties": []
+        }
+      ],
+      "experience_years": 15,
+      "consultation_fee_inr": 1500,
+      "profile_url": null
+    },
+    {
+      "name": "Dr. Dharmender Malik",
+      "designation": "Senior Consultant Nuclear Medicine",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Nuclear Medicine",
+          "specialties": []
+        }
+      ],
+      "experience_years": 10,
+      "consultation_fee_inr": 1500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-dharmender-malik-5295"
+    },
+    {
+      "name": "Dr. Digvijay Singh",
+      "designation": "Senior Consultant Ophthalmology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Ophthalmology",
+          "specialties": []
+        }
+      ],
+      "experience_years": 18,
+      "consultation_fee_inr": 1500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-digvijay-singh-11642"
+    },
+    {
+      "name": "Dr. Gargi Maitra",
+      "designation": "Senior Consultant Pulmonology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Pulmonology",
+          "specialties": [
+            "Pulmonology and Critical care",
+            "Sleep Medicine"
+          ]
+        }
+      ],
+      "experience_years": 13,
+      "consultation_fee_inr": 1600,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-gargi-maitra-828"
+    },
+    {
+      "name": "Dr. Kenshuk Marwah",
+      "designation": "Senior Consultant Ophthalmology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Ophthalmology",
+          "specialties": []
+        }
+      ],
+      "experience_years": 18,
+      "consultation_fee_inr": 1500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-kenshuk-marwah-118"
+    },
+    {
+      "name": "Dr. Manish Kori",
+      "designation": "Senior Consultant Paediatrics",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Paediatrics",
+          "specialties": []
+        }
+      ],
+      "experience_years": 15,
+      "consultation_fee_inr": 2500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-manish-kori-1600"
+    },
+    {
+      "name": "Dr. Megha Consul",
+      "designation": "Senior Consultant & Unit Head Neonatology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Paediatrics",
+          "specialties": [
+            "Neonatology"
+          ]
+        }
+      ],
+      "experience_years": 19,
+      "consultation_fee_inr": 1500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-megha-consul-9711"
+    },
+    {
+      "name": "Dr. Mohammad Nadeem",
+      "designation": "Head Emergency",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Emergency and Trauma",
+          "specialties": [
+            "Emergency Medicine"
+          ]
+        }
+      ],
+      "experience_years": 26,
+      "consultation_fee_inr": 2500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-mohammad-nadeem-7231"
+    },
+    {
+      "name": "Dr. Nandini Gulati.",
+      "designation": "Senior Consultant Pulmonology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Pulmonology",
+          "specialties": [
+            "Pulmonology and Critical care",
+            "Sleep Medicine"
+          ]
+        }
+      ],
+      "experience_years": 9,
+      "consultation_fee_inr": 1200,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-nandini-gulati-10540"
+    },
+    {
+      "name": "Dr. Naresh Jain",
+      "designation": "Senior Consultant Dermatology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Dermatology",
+          "specialties": []
+        }
+      ],
+      "experience_years": 20,
+      "consultation_fee_inr": 1800,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-naresh-jain-350"
+    },
+    {
+      "name": "Dr. Naval Mendiratta",
+      "designation": "Senior Consultant Rheumatology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Rheumatology",
+          "specialties": []
+        }
+      ],
+      "experience_years": 12,
+      "consultation_fee_inr": 1350,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-naval-mendiratta-1075"
+    },
+    {
+      "name": "Dr. Neha Rastogi",
+      "designation": "Senior Consultant Infectious Diseases",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Infectious Diseases",
+          "specialties": []
+        }
+      ],
+      "experience_years": 12,
+      "consultation_fee_inr": 1500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-neha-rastogi-6502"
+    },
+    {
+      "name": "Dr. Parul Sachdeva",
+      "designation": "Senior Consultant Ent",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "ENT",
+          "specialties": [
+            "ENT (Ear, Nose and Throat)"
+          ]
+        }
+      ],
+      "experience_years": 12,
+      "consultation_fee_inr": 1800,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-parul-sachdeva-2193"
+    },
+    {
+      "name": "Dr. Poonam Sachdev",
+      "designation": "Senior Consultant Paediatrics",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Paediatrics",
+          "specialties": []
+        }
+      ],
+      "experience_years": 14,
+      "consultation_fee_inr": 1500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-poonam-sachdev-1552"
+    },
+    {
+      "name": "Dr. Priti Arya",
+      "designation": "Senior Consultant Dermatology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Dermatology",
+          "specialties": []
+        }
+      ],
+      "experience_years": 18,
+      "consultation_fee_inr": 1500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-priti-arya-1389"
+    },
+    {
+      "name": "Dr. Rajeev Mohan Seth",
+      "designation": "Senior Consultant General Surgery",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "General Surgery",
+          "specialties": [
+            "General and Laparoscopic Surgery",
+            "General and Minimal Access Surgery"
+          ]
+        }
+      ],
+      "experience_years": 27,
+      "consultation_fee_inr": 2500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-rajeev-mohan-seth-11788"
+    },
+    {
+      "name": "Dr. Rakesh Kumar Jain",
+      "designation": "Senior Consultant Paediatric Neurology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Paediatrics",
+          "specialties": [
+            "Paediatric Neurology"
+          ]
+        }
+      ],
+      "experience_years": 19,
+      "consultation_fee_inr": 2000,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-rakesh-kumar-jain-1432"
+    },
+    {
+      "name": "Dr. Rashmi Sharma",
+      "designation": "Senior Consultant Dermatology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Dermatology",
+          "specialties": []
+        }
+      ],
+      "experience_years": 15,
+      "consultation_fee_inr": 1500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-rashmi-sharma-12169"
+    },
+    {
+      "name": "Dr. Rupal Gupta",
+      "designation": "Senior Consultant Ophthalmology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Ophthalmology",
+          "specialties": []
+        }
+      ],
+      "experience_years": 27,
+      "consultation_fee_inr": 1500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-rupal-gupta-1542"
+    },
+    {
+      "name": "Dr. Sachin Dhawan",
+      "designation": "Senior Consultant Dermatology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Dermatology",
+          "specialties": []
+        }
+      ],
+      "experience_years": 20,
+      "consultation_fee_inr": 1800,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-sachin-dhawan-1029"
+    },
+    {
+      "name": "Dr. Shweta Gangal",
+      "designation": "Senior Consultant Obstetrics & Gynaecology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Obstetrics and Gynaecology",
+          "specialties": []
+        }
+      ],
+      "experience_years": 13,
+      "consultation_fee_inr": 1200,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-shweta-gangal-2862"
+    },
+    {
+      "name": "Dr. Sonal Bansal",
+      "designation": "Senior Consultant Dermatology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Dermatology",
+          "specialties": []
+        }
+      ],
+      "experience_years": 15,
+      "consultation_fee_inr": 1200,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-sonal-bansal-425"
+    },
+    {
+      "name": "Dr. Sonia Bhalla",
+      "designation": "Senior Consultant Ophthalmology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Ophthalmology",
+          "specialties": []
+        }
+      ],
+      "experience_years": 23,
+      "consultation_fee_inr": 1500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-sonia-bhalla-762"
+    },
+    {
+      "name": "Dr. Vaibhav Bhola",
+      "designation": "Senior Consultant Anaesthesiology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Support Specialties",
+          "specialties": [
+            "Pain Management"
+          ]
+        }
+      ],
+      "experience_years": 20,
+      "consultation_fee_inr": 1500,
+      "profile_url": null
+    },
+    {
+      "name": "Dr. Zubin Dev Sharma",
+      "designation": "Senior Consultant Gastroenterology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Gastroenterology and Hepatobiliary Sciences",
+          "specialties": []
+        }
+      ],
+      "experience_years": 16,
+      "consultation_fee_inr": 1500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-zubin-dev-sharma-11710"
+    },
+    {
+      "name": "Dr. Aditi Krishna Agrwal.",
+      "designation": "Consultant Ophthalmology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Ophthalmology",
+          "specialties": []
+        }
+      ],
+      "experience_years": 14,
+      "consultation_fee_inr": 2500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-aditi-krishna-agrwal-754"
+    },
+    {
+      "name": "Dr. Amrinder Kaur Bajaj",
+      "designation": "Consultant Obstetrics & Gynaecology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Obstetrics and Gynaecology",
+          "specialties": []
+        }
+      ],
+      "experience_years": 40,
+      "consultation_fee_inr": 1500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-amrinder-kaur-bajaj-4546"
+    },
+    {
+      "name": "Dr. Anusha Swaminathan",
+      "designation": "Consultant Hemato-Oncology & BMT",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Haematology",
+          "specialties": []
+        },
+        {
+          "department": "Organ Transplant",
+          "specialties": [
+            "Haematology and BMT"
+          ]
+        },
+        {
+          "department": "Oncology",
+          "specialties": [
+            "Hemato-Oncology"
+          ]
+        }
+      ],
+      "experience_years": 10,
+      "consultation_fee_inr": 1200,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-anusha-swaminathan-11299"
+    },
+    {
+      "name": "Dr. Chirag Arora",
+      "designation": "Consultant Orthopaedics",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Orthopaedics",
+          "specialties": [
+            "Orthopaedics and Joint Replacement",
+            "Sports Medicine"
+          ]
+        }
+      ],
+      "experience_years": 15,
+      "consultation_fee_inr": 1500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-chirag-arora-15005"
+    },
+    {
+      "name": "Dr. Deepali Raina",
+      "designation": "Consultant Gynae Oncology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Oncology",
+          "specialties": [
+            "Gynaecologic Oncology"
+          ]
+        }
+      ],
+      "experience_years": 11,
+      "consultation_fee_inr": 1500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-deepali-raina-13281"
+    },
+    {
+      "name": "Dr. Deepika Singh Hooda",
+      "designation": "Consultant Obstetrics & Gynaecology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Obstetrics and Gynaecology",
+          "specialties": [
+            "Robotic Surgery"
+          ]
+        }
+      ],
+      "experience_years": 14,
+      "consultation_fee_inr": 1200,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-deepika-singh-hooda-9814"
+    },
+    {
+      "name": "Dr. Garima Satija",
+      "designation": "Consultant Ophthalmology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Ophthalmology",
+          "specialties": []
+        }
+      ],
+      "experience_years": 6,
+      "consultation_fee_inr": 1300,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-garima-satija-14649"
+    },
+    {
+      "name": "Dr. Kumar Suprashant",
+      "designation": "Consultant Orthopaedics",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Orthopaedics",
+          "specialties": [
+            "Paediatric Orthopaedics"
+          ]
+        }
+      ],
+      "experience_years": 9,
+      "consultation_fee_inr": 1500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-kumar-suprashant-4881"
+    },
+    {
+      "name": "Dr. Madhukar Shahi",
+      "designation": "Consultant Cardiology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Cardiac Sciences",
+          "specialties": [
+            "Interventional Cardiology"
+          ]
+        }
+      ],
+      "experience_years": 37,
+      "consultation_fee_inr": 2500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-madhukar-shahi-11152"
+    },
+    {
+      "name": "Dr. Mimansa Sharma (PT)",
+      "designation": "Consultant Obstetrics & Gynaecology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Obstetrics and Gynaecology",
+          "specialties": []
+        }
+      ],
+      "experience_years": 8,
+      "consultation_fee_inr": 1500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-mimansa-sharma-pt-10772"
+    },
+    {
+      "name": "Dr. Navya Handa",
+      "designation": "Consultant Dermatology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Dermatology",
+          "specialties": []
+        }
+      ],
+      "experience_years": 11,
+      "consultation_fee_inr": 1000,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-navya-handa-11612"
+    },
+    {
+      "name": "Dr. Neha Gupta",
+      "designation": "Consultant Infectious Diseases",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Infectious Diseases",
+          "specialties": []
+        }
+      ],
+      "experience_years": 15,
+      "consultation_fee_inr": 2000,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-neha-gupta-2987"
+    },
+    {
+      "name": "Dr. Neha Kakkar",
+      "designation": "Consultant Radiation Oncology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Oncology",
+          "specialties": [
+            "Radiation Oncology"
+          ]
+        }
+      ],
+      "experience_years": 10,
+      "consultation_fee_inr": 1000,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-neha-kakkar-10459"
+    },
+    {
+      "name": "Dr. Pankaj Yadav",
+      "designation": "Consultant Orthopaedics",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Orthopaedics",
+          "specialties": [
+            "Orthopaedics and Joint Replacement"
+          ]
+        }
+      ],
+      "experience_years": 10,
+      "consultation_fee_inr": 1500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-pankaj-yadav-15006"
+    },
+    {
+      "name": "Dr. Priyanka Karnani",
+      "designation": "Consultant Neonatology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Paediatrics",
+          "specialties": [
+            "Neonatology"
+          ]
+        }
+      ],
+      "experience_years": 11,
+      "consultation_fee_inr": 1200,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-priyanka-karnani-14577"
+    },
+    {
+      "name": "Dr. Radha Rajpal",
+      "designation": "Consultant Paediatrics",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Paediatrics",
+          "specialties": []
+        }
+      ],
+      "experience_years": 18,
+      "consultation_fee_inr": 2500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-radha-rajpal-3253"
+    },
+    {
+      "name": "Dr. Ramit Wadhwa",
+      "designation": "Consultant Non Invasive Cardiology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Cardiac Sciences",
+          "specialties": [
+            "Non-Invasive Cardiology"
+          ]
+        }
+      ],
+      "experience_years": 12,
+      "consultation_fee_inr": 1200,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-ramit-wadhwa-5755"
+    },
+    {
+      "name": "Dr. Ritika Malhotra&Team",
+      "designation": "Consultant Dental Science",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Dental Science",
+          "specialties": [
+            "Oral and Maxillofacial Surgery",
+            "Orthodontics",
+            "Periodontics"
+          ]
+        }
+      ],
+      "experience_years": 16,
+      "consultation_fee_inr": 1000,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-ritika-malhotrateam-12804"
+    },
+    {
+      "name": "Dr. Saurabh Chopra",
+      "designation": "Consultant Cardiology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Cardiac Sciences",
+          "specialties": [
+            "Interventional Cardiology"
+          ]
+        }
+      ],
+      "experience_years": 14,
+      "consultation_fee_inr": 2500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-saurabh-chopra-12556"
+    },
+    {
+      "name": "Dr. Shashank Rastogi.",
+      "designation": "Consultant General Surgery",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "General Surgery",
+          "specialties": [
+            "Bariatric Surgery",
+            "General and Laparoscopic Surgery",
+            "General and Minimal Access Surgery",
+            "Robotic Surgery"
+          ]
+        }
+      ],
+      "experience_years": 20,
+      "consultation_fee_inr": 2500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-shashank-rastogi-258"
+    },
+    {
+      "name": "Dr. Shrinidhi Nathany",
+      "designation": "Consultant Molecular Hematology & Oncology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Haematology",
+          "specialties": [
+            "Paediatric Haematology and BMT"
+          ]
+        },
+        {
+          "department": "Oncology",
+          "specialties": []
+        }
+      ],
+      "experience_years": 8,
+      "consultation_fee_inr": 2500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-shrinidhi-nathany-11733"
+    },
+    {
+      "name": "Dr. Sudhir Kumar Garg",
+      "designation": "Consultant Ophthalmology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Ophthalmology",
+          "specialties": []
+        }
+      ],
+      "experience_years": 32,
+      "consultation_fee_inr": 1500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-sudhir-kumar-garg-11220"
+    },
+    {
+      "name": "Dr. Sukant Vijay",
+      "designation": "Consultant Orthopaedics",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Orthopaedics",
+          "specialties": [
+            "Orthopaedic Oncology",
+            "Orthopaedics and Joint Replacement",
+            "Robotic and Computer navigated Joint reconstruction",
+            "Sports Medicine"
+          ]
+        }
+      ],
+      "experience_years": 11,
+      "consultation_fee_inr": 2500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-sukant-vijay-9767"
+    },
+    {
+      "name": "Dr. Sunisha Arora",
+      "designation": "Consultant Paediatric Hemato-Oncology & BMT",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Organ Transplant",
+          "specialties": [
+            "Haematology and BMT"
+          ]
+        },
+        {
+          "department": "Paediatrics",
+          "specialties": [
+            "Paediatric Oncology"
+          ]
+        },
+        {
+          "department": "Haematology",
+          "specialties": [
+            "Paediatric Haematology and BMT"
+          ]
+        }
+      ],
+      "experience_years": 7,
+      "consultation_fee_inr": 2500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-sunisha-arora-12673"
+    },
+    {
+      "name": "Dr. Thammineni Anil Kumar",
+      "designation": "Consultant Mental Health & Behavioural Sciences",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Mental Health and Behavioural Sciences",
+          "specialties": [
+            "Psychiatry"
+          ]
+        }
+      ],
+      "experience_years": 10,
+      "consultation_fee_inr": 2200,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-thammineni-anil-kumar-4746"
+    },
+    {
+      "name": "Dr. Trideep Kumar Choudhary",
+      "designation": "Consultant Mental Health & Behavioural Sciences",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Mental Health and Behavioural Sciences",
+          "specialties": [
+            "Counselling Psychology"
+          ]
+        }
+      ],
+      "experience_years": 12,
+      "consultation_fee_inr": 2500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-trideep-kumar-choudhary-9213"
+    },
+    {
+      "name": "Dr. Vaibhav Gautam",
+      "designation": "Consultant Orthopaedics",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Orthopaedics",
+          "specialties": [
+            "Orthopaedics and Joint Replacement",
+            "Orthopaedics and Spine Surgery",
+            "Robotic and Computer navigated Joint reconstruction",
+            "Sports Medicine"
+          ]
+        }
+      ],
+      "experience_years": 10,
+      "consultation_fee_inr": 1500,
+      "profile_url": null
+    },
+    {
+      "name": "Dr. Varun Gosain",
+      "designation": "Consultant Nephrology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Nephrology",
+          "specialties": []
+        }
+      ],
+      "experience_years": 9,
+      "consultation_fee_inr": 1500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-varun-gosain-4910"
+    },
+    {
+      "name": "Mr. INDRISH BHATIA",
+      "designation": "Consultant Ophthalmology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Ophthalmology",
+          "specialties": []
+        }
+      ],
+      "experience_years": 12,
+      "consultation_fee_inr": 1500,
+      "profile_url": null
+    },
+    {
+      "name": "Dr. Arpan Nag",
+      "designation": "Associate Consultant Orthopaedics",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Orthopaedics",
+          "specialties": [
+            "Orthopaedics and Joint Replacement"
+          ]
+        }
+      ],
+      "experience_years": 6,
+      "consultation_fee_inr": 2500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-arpan-nag-4856"
+    },
+    {
+      "name": "Dr. Mehak Trehan",
+      "designation": "Associate Consultant Hemato-Oncology & Bmt",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Oncology",
+          "specialties": [
+            "Hemato-Oncology"
+          ]
+        },
+        {
+          "department": "Haematology",
+          "specialties": []
+        },
+        {
+          "department": "Organ Transplant",
+          "specialties": [
+            "Haematology and BMT"
+          ]
+        }
+      ],
+      "experience_years": 6,
+      "consultation_fee_inr": 2500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-mehak-trehan-4572"
+    },
+    {
+      "name": "Dr. Neha Manhas",
+      "designation": "Associate Consultant Nephrology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Nephrology",
+          "specialties": []
+        }
+      ],
+      "experience_years": 9,
+      "consultation_fee_inr": 1000,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-neha-manhas-13511"
+    },
+    {
+      "name": "Dr. Parima Dixit",
+      "designation": "Associate Consultant Obstetrics & Gynaecology",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Obstetrics and Gynaecology",
+          "specialties": []
+        }
+      ],
+      "experience_years": 8,
+      "consultation_fee_inr": 1000,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-parima-dixit-9869"
+    },
+    {
+      "name": "Dr. Paritosh Garg",
+      "designation": "Associate Consultant Hemato-Oncology & Bmt",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Oncology",
+          "specialties": [
+            "Hemato-Oncology"
+          ]
+        },
+        {
+          "department": "Haematology",
+          "specialties": []
+        },
+        {
+          "department": "Organ Transplant",
+          "specialties": [
+            "Haematology and BMT"
+          ]
+        }
+      ],
+      "experience_years": 8,
+      "consultation_fee_inr": 2500,
+      "profile_url": null
+    },
+    {
+      "name": "Dr. Sherook J",
+      "designation": "Associate Consultant Hemato-Oncology & Bmt",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Organ Transplant",
+          "specialties": [
+            "Haematology and BMT",
+            "Hemato-Oncology"
+          ]
+        },
+        {
+          "department": "Haematology",
+          "specialties": []
+        },
+        {
+          "department": "Oncology",
+          "specialties": [
+            "Hemato-Oncology"
+          ]
+        }
+      ],
+      "experience_years": 8,
+      "consultation_fee_inr": 2500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-sherook-j-4580"
+    },
+    {
+      "name": "Dr. Vinod Singh Rathore",
+      "designation": "Associate Consultant Orthopaedics",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Orthopaedics",
+          "specialties": []
+        }
+      ],
+      "experience_years": 3,
+      "consultation_fee_inr": 1000,
+      "profile_url": null
+    },
+    {
+      "name": "Dr. Akash Jaiswal",
+      "designation": "Attending Consultant Geriatrics",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Geriatric Medicine",
+          "specialties": []
+        }
+      ],
+      "experience_years": 6,
+      "consultation_fee_inr": 1200,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-akash-jaiswal-11480"
+    },
+    {
+      "name": "Dr. Sameer Bhargava.",
+      "designation": "Psychiatrist",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Mental Health and Behavioural Sciences",
+          "specialties": [
+            "Psychiatry"
+          ]
+        }
+      ],
+      "experience_years": 4,
+      "consultation_fee_inr": 1000,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-sameer-bhargava-14363"
+    },
+    {
+      "name": "Dr. Shikha Singh",
+      "designation": "Dietician",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Support Specialties",
+          "specialties": [
+            "Dietetics and Clinical Nutrition"
+          ]
+        }
+      ],
+      "experience_years": 7,
+      "consultation_fee_inr": 2500,
+      "profile_url": "https://www.fortishealthcare.com/doctors/dr-shikha-singh-10203"
+    },
+    {
+      "name": "Ms. Deepti Khatuja",
+      "designation": "Manager Dietetics & Nutrition",
+      "hospital": "FMRI Gurgaon",
+      "departments": [
+        {
+          "department": "Support Specialties",
+          "specialties": [
+            "Dietetics and Clinical Nutrition"
+          ]
+        }
+      ],
+      "experience_years": 19,
+      "consultation_fee_inr": 800,
+      "profile_url": null
+    }
+  ]
+}
