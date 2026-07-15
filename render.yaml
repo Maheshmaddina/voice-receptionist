@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: fmri-receptionist-backend
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: clinic-db
+          property: connectionString
+      - key: VERIFY_RETELL_SIGNATURE
+        value: "false"   # flip to true + set RETELL_API_KEY after the agent is bound
+
+databases:
+  - name: clinic-db
+    plan: free
