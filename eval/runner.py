@@ -30,7 +30,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent / "retell"))
 from tools import tool_defs  # noqa: E402  (single source of truth with the voice agent)
 
-from eval.llm import make_client  # noqa: E402
+from eval.llm import completion, make_client  # noqa: E402
 
 BACKEND = os.environ.get("BACKEND_URL", "http://localhost:8000").rstrip("/")
 IST = ZoneInfo("Asia/Kolkata")
@@ -54,8 +54,8 @@ def openai_tools() -> list[dict]:
 
 
 def chat(messages: list[dict], tools: list[dict] | None = None):
-    return client.chat.completions.create(
-        model=MODEL, messages=messages, tools=tools or None, temperature=0.4,
+    return completion(
+        client, model=MODEL, messages=messages, tools=tools or None, temperature=0.4,
     ).choices[0].message
 
 

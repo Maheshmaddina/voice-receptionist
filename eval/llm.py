@@ -11,10 +11,26 @@ have. Resolution order:
 from __future__ import annotations
 
 import os
+import re
+import sys
+import time
 
-from openai import OpenAI
+from openai import OpenAI, RateLimitError
 
 GEMINI_BASE = "https://generativelanguage.googleapis.com/v1beta/openai/"
+
+
+def completion(client: OpenAI, **kwargs):
+    """chat.completions.create with free-tier-friendly 429 backoff."""
+    for attempt in range(8):
+        try:
+            return client.chat.completions.create(**kwargs)
+        except RateLimitError as e:
+            m = re.search(r"retry.{0,10}?(\d+(?:\.\d+)?)s", str(e), re.I)
+            delay = float(m.group(1)) + 1 if m else 15 * (attempt + 1)
+            print(f"    (rate-limited, waiting {delay:.0f}s)", file=sys.stderr)
+            time.sleep(min(delay, 70))
+    raise RuntimeError("LLM rate limit: exhausted retries")
 
 
 def make_client() -> tuple[OpenAI, str]:

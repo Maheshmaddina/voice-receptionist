@@ -13,7 +13,7 @@ import re
 import sys
 from pathlib import Path
 
-from eval.llm import make_client
+from eval.llm import completion, make_client
 
 HERE = Path(__file__).resolve().parent
 client, MODEL = make_client()
@@ -46,8 +46,8 @@ Answer each question strictly. Respond with ONLY this JSON, no prose:
 
 Questions:
 {json.dumps(questions, indent=1)}"""
-    msg = client.chat.completions.create(
-        model=MODEL, temperature=0,
+    msg = completion(
+        client, model=MODEL, temperature=0,
         response_format={"type": "json_object"},
         messages=[{"role": "user", "content": prompt}],
     ).choices[0].message
