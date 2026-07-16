@@ -1,0 +1,105 @@
+{
+  "id": "cancel",
+  "description": "Caller cancels an existing appointment.",
+  "passed": true,
+  "checks": [
+    {
+      "type": "cancelled",
+      "pass": true,
+      "detail": "appointment 7 status=cancelled"
+    },
+    {
+      "type": "booked_count",
+      "pass": true,
+      "detail": "booked_count=0 (want 0)"
+    }
+  ],
+  "judge_questions": [
+    "Did the agent verify which appointment to cancel before cancelling?"
+  ],
+  "turns": 9,
+  "tool_calls": 2,
+  "tool_latency_ms": {
+    "p50": 11.7,
+    "max": 14.4
+  },
+  "transcript": [
+    {
+      "speaker": "AGENT",
+      "text": "Thank you for calling Fortis Memorial Research Institute, Gurgaon. This is Diya. How may I help you today?"
+    },
+    {
+      "speaker": "PATIENT",
+      "text": "Hi, I\u2019m calling to cancel an appointment I have scheduled. I'm feeling much better now, so I don't need to come in anymore."
+    },
+    {
+      "speaker": "AGENT",
+      "text": "I'm glad to hear you're feeling better. I can certainly help you with that. Could you please provide the ten-digit mobile number associated with your appointment?"
+    },
+    {
+      "speaker": "PATIENT",
+      "text": "Sure, it's 9811111007."
+    },
+    {
+      "speaker": "AGENT",
+      "text": "I see an appointment for Farah Khan with Dr. Satish Koul on Friday, July seventeenth at nine thirty in the morning. Is this the appointment you would like to cancel?"
+    },
+    {
+      "speaker": "PATIENT",
+      "text": "Yes, that's the one. Please go ahead and cancel it for me."
+    },
+    {
+      "speaker": "AGENT",
+      "text": "That appointment has been successfully cancelled. Is there anything else I can help you with today?"
+    },
+    {
+      "speaker": "PATIENT",
+      "text": "No, that\u2019s all. Thank you so much for your help. Have a good day!"
+    },
+    {
+      "speaker": "AGENT",
+      "text": "You're very welcome. I'm glad I could help. Have a wonderful day, and take care!"
+    }
+  ],
+  "tool_log": [
+    {
+      "tool": "lookup_appointments",
+      "args": {
+        "patient_phone": "9811111007"
+      },
+      "result": {
+        "patient": "Farah Khan",
+        "appointments": [
+          {
+            "appointment_id": 7,
+            "doctor": "Dr. Satish Koul",
+            "start": "2026-07-17T09:30:00",
+            "spoken": "Friday, 17 July at 9:30 AM",
+            "type": "New Consultation",
+            "status": "booked",
+            "patient": "Farah Khan"
+          }
+        ]
+      },
+      "latency_ms": 8.9
+    },
+    {
+      "tool": "cancel_appointment",
+      "args": {
+        "idempotency_key": "cancel7a",
+        "appointment_id": 7
+      },
+      "result": {
+        "cancelled": true,
+        "appointment_id": 7,
+        "doctor": "Dr. Satish Koul",
+        "start": "2026-07-17T09:30:00",
+        "spoken": "Friday, 17 July at 9:30 AM",
+        "type": "New Consultation",
+        "status": "cancelled",
+        "patient": "Farah Khan"
+      },
+      "latency_ms": 14.4
+    }
+  ]
+}

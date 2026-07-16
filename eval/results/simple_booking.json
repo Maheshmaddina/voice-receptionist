@@ -1,0 +1,358 @@
+{
+  "id": "simple_booking",
+  "description": "Cooperative caller books a dermatology appointment, provides all info when asked.",
+  "passed": true,
+  "checks": [
+    {
+      "type": "booked_count",
+      "pass": true,
+      "detail": "booked_count=1 (want 1)"
+    },
+    {
+      "type": "booked_department_contains",
+      "pass": true,
+      "detail": "departments=['Dermatology'] (want ~Dermatology)"
+    }
+  ],
+  "judge_questions": [
+    "Did the agent confirm the patient's name, phone number, and slot before booking?",
+    "Did the agent only mention doctors and times that appeared in tool results?"
+  ],
+  "turns": 13,
+  "tool_calls": 7,
+  "tool_latency_ms": {
+    "p50": 6.5,
+    "max": 23.7
+  },
+  "transcript": [
+    {
+      "speaker": "AGENT",
+      "text": "Thank you for calling Fortis Memorial Research Institute, Gurgaon. This is Diya. How may I help you today?"
+    },
+    {
+      "speaker": "PATIENT",
+      "text": "Hi, good morning. I\u2019ve been dealing with this persistent skin rash for a while now, and I was hoping to get an appointment with a dermatologist sometime this week, if possible."
+    },
+    {
+      "speaker": "AGENT",
+      "text": "I can certainly help you with that. We have several dermatologists available. Would you prefer to see Dr. Naresh Jain, Dr. Priti Arya, Dr. Rashmi Sharma, Dr. Sachin Dhawan, or Dr. Sonal Bansal?"
+    },
+    {
+      "speaker": "PATIENT",
+      "text": "Oh, I\u2019m not really sure who to pick. Do any of them have an opening this week? I\u2019m quite flexible with the timing."
+    },
+    {
+      "speaker": "AGENT",
+      "text": "I have a few dermatologists with availability this week. You could see Dr. Naresh Jain, Dr. Priti Arya, or Dr. Rashmi Sharma. Do any of those names sound familiar to you, or would you like me to check the specific openings for one of them?"
+    },
+    {
+      "speaker": "PATIENT",
+      "text": "Actually, I don't have a preference, so why don't you just check the earliest opening you have for any of them? I'm happy to go with whoever is available soonest."
+    },
+    {
+      "speaker": "AGENT",
+      "text": "The earliest opening is with Dr. Priti Arya today, Thursday the sixteenth at five o'clock in the evening. Would you like to book that, or would you prefer one of the other times?"
+    },
+    {
+      "speaker": "PATIENT",
+      "text": "That sounds perfect, thank you. I'll take that five o'clock slot today."
+    },
+    {
+      "speaker": "AGENT",
+      "text": "Great. To finalize this, may I have your full name and a 10-digit mobile number, please? Also, is this a new consultation, a follow-up, or a teleconsultation?"
+    },
+    {
+      "speaker": "PATIENT",
+      "text": "My name is Priya Malhotra, and my phone number is 9811111001. This will be a new consultation."
+    },
+    {
+      "speaker": "AGENT",
+      "text": "Thank you, Priya. Just to confirm, you would like to book a new consultation with Dr. Priti Arya for today, Thursday the sixteenth at five o'clock in the evening. Your phone number is 9-8-1-1-1-1-1-0-0-1. Is that correct?"
+    },
+    {
+      "speaker": "PATIENT",
+      "text": "Yes, that\u2019s all correct. Thank you so much for your help. See you this evening."
+    },
+    {
+      "speaker": "AGENT",
+      "text": "You're very welcome, Priya. Your appointment with Dr. Priti Arya is confirmed for today, Thursday the sixteenth at five o'clock in the evening. We look forward to seeing you. Is there anything else I can assist you with today?"
+    }
+  ],
+  "tool_log": [
+    {
+      "tool": "find_doctors",
+      "args": {
+        "department": "skin"
+      },
+      "result": {
+        "error": "No doctors matched department 'skin'.",
+        "valid_departments": [
+          "Cardiac Sciences",
+          "Critical Care",
+          "Dental Science",
+          "Dermatology",
+          "Diabetology/Endocrinology",
+          "ENT",
+          "Emergency and Trauma",
+          "Gastroenterology and Hepatobiliary Sciences",
+          "General Surgery",
+          "Geriatric Medicine",
+          "Haematology",
+          "Infectious Diseases",
+          "Internal Medicine",
+          "Liver Transplant and Hepatobiliary Sciences",
+          "Mental Health and Behavioural Sciences",
+          "Nephrology",
+          "Neurointerventional Radiology",
+          "Neurology",
+          "Neurosurgery",
+          "Nuclear Medicine",
+          "Obstetrics and Gynaecology",
+          "Oncology",
+          "Ophthalmology",
+          "Organ Transplant",
+          "Orthopaedics",
+          "Paediatrics",
+          "Pain and Palliative Medicine",
+          "Plastic and Reconstructive Surgery",
+          "Pulmonology",
+          "Radiology",
+          "Rheumatology",
+          "Support Specialties",
+          "Urology",
+          "Vascular Surgery"
+        ]
+      },
+      "latency_ms": 7.6
+    },
+    {
+      "tool": "find_doctors",
+      "args": {
+        "department": "Dermatology"
+      },
+      "result": {
+        "doctors": [
+          {
+            "doctor_id": 99,
+            "name": "Dr. Naresh Jain",
+            "designation": "Senior Consultant Dermatology",
+            "departments": "Dermatology",
+            "experience_years": 20,
+            "consultation_fee_inr": 1800
+          },
+          {
+            "doctor_id": 104,
+            "name": "Dr. Priti Arya",
+            "designation": "Senior Consultant Dermatology",
+            "departments": "Dermatology",
+            "experience_years": 18,
+            "consultation_fee_inr": 1500
+          },
+          {
+            "doctor_id": 107,
+            "name": "Dr. Rashmi Sharma",
+            "designation": "Senior Consultant Dermatology",
+            "departments": "Dermatology",
+            "experience_years": 15,
+            "consultation_fee_inr": 1500
+          },
+          {
+            "doctor_id": 109,
+            "name": "Dr. Sachin Dhawan",
+            "designation": "Senior Consultant Dermatology",
+            "departments": "Dermatology",
+            "experience_years": 20,
+            "consultation_fee_inr": 1800
+          },
+          {
+            "doctor_id": 111,
+            "name": "Dr. Sonal Bansal",
+            "designation": "Senior Consultant Dermatology",
+            "departments": "Dermatology",
+            "experience_years": 15,
+            "consultation_fee_inr": 1200
+          }
+        ],
+        "note": "multiple matches \u2014 ask the caller to choose"
+      },
+      "latency_ms": 6.5
+    },
+    {
+      "tool": "search_availability",
+      "args": {
+        "date_from": "2026-07-16T13:31:00",
+        "department": "Dermatology",
+        "date_to": "2026-07-19T23:59:59"
+      },
+      "result": {
+        "disambiguate": [
+          {
+            "doctor_id": 99,
+            "name": "Dr. Naresh Jain",
+            "designation": "Senior Consultant Dermatology",
+            "departments": "Dermatology",
+            "experience_years": 20,
+            "consultation_fee_inr": 1800
+          },
+          {
+            "doctor_id": 104,
+            "name": "Dr. Priti Arya",
+            "designation": "Senior Consultant Dermatology",
+            "departments": "Dermatology",
+            "experience_years": 18,
+            "consultation_fee_inr": 1500
+          },
+          {
+            "doctor_id": 107,
+            "name": "Dr. Rashmi Sharma",
+            "designation": "Senior Consultant Dermatology",
+            "departments": "Dermatology",
+            "experience_years": 15,
+            "consultation_fee_inr": 1500
+          }
+        ],
+        "note": "ask the caller which doctor, then search again with doctor_id"
+      },
+      "latency_ms": 5.3
+    },
+    {
+      "tool": "search_availability",
+      "args": {
+        "date_to": "2026-07-19T23:59:59",
+        "date_from": "2026-07-16T13:31:00",
+        "doctor_id": 99
+      },
+      "result": {
+        "doctor": "Dr. Naresh Jain",
+        "slots": [
+          {
+            "slot_id": 8234,
+            "start": "2026-07-17T10:00:00",
+            "spoken": "Friday, 17 July at 10:00 AM"
+          },
+          {
+            "slot_id": 8235,
+            "start": "2026-07-17T10:30:00",
+            "spoken": "Friday, 17 July at 10:30 AM"
+          },
+          {
+            "slot_id": 8236,
+            "start": "2026-07-17T11:00:00",
+            "spoken": "Friday, 17 July at 11:00 AM"
+          },
+          {
+            "slot_id": 8237,
+            "start": "2026-07-17T11:30:00",
+            "spoken": "Friday, 17 July at 11:30 AM"
+          },
+          {
+            "slot_id": 8238,
+            "start": "2026-07-17T12:00:00",
+            "spoken": "Friday, 17 July at 12:00 PM"
+          },
+          {
+            "slot_id": 8239,
+            "start": "2026-07-17T12:30:00",
+            "spoken": "Friday, 17 July at 12:30 PM"
+          }
+        ]
+      },
+      "latency_ms": 7.0
+    },
+    {
+      "tool": "search_availability",
+      "args": {
+        "date_from": "2026-07-16T13:31:00",
+        "doctor_id": 104,
+        "date_to": "2026-07-19T23:59:59"
+      },
+      "result": {
+        "doctor": "Dr. Priti Arya",
+        "slots": [
+          {
+            "slot_id": 8660,
+            "start": "2026-07-16T17:00:00",
+            "spoken": "Thursday, 16 July at 5:00 PM"
+          },
+          {
+            "slot_id": 8661,
+            "start": "2026-07-16T17:30:00",
+            "spoken": "Thursday, 16 July at 5:30 PM"
+          },
+          {
+            "slot_id": 8664,
+            "start": "2026-07-16T19:00:00",
+            "spoken": "Thursday, 16 July at 7:00 PM"
+          }
+        ]
+      },
+      "latency_ms": 4.2
+    },
+    {
+      "tool": "search_availability",
+      "args": {
+        "date_to": "2026-07-19T23:59:59",
+        "doctor_id": 107,
+        "date_from": "2026-07-16T13:31:00"
+      },
+      "result": {
+        "doctor": "Dr. Rashmi Sharma",
+        "slots": [
+          {
+            "slot_id": 8905,
+            "start": "2026-07-18T09:30:00",
+            "spoken": "Saturday, 18 July at 9:30 AM"
+          },
+          {
+            "slot_id": 8907,
+            "start": "2026-07-18T10:30:00",
+            "spoken": "Saturday, 18 July at 10:30 AM"
+          },
+          {
+            "slot_id": 8908,
+            "start": "2026-07-18T11:00:00",
+            "spoken": "Saturday, 18 July at 11:00 AM"
+          },
+          {
+            "slot_id": 8910,
+            "start": "2026-07-18T12:00:00",
+            "spoken": "Saturday, 18 July at 12:00 PM"
+          },
+          {
+            "slot_id": 8913,
+            "start": "2026-07-18T17:30:00",
+            "spoken": "Saturday, 18 July at 5:30 PM"
+          },
+          {
+            "slot_id": 8914,
+            "start": "2026-07-18T18:00:00",
+            "spoken": "Saturday, 18 July at 6:00 PM"
+          }
+        ]
+      },
+      "latency_ms": 3.7
+    },
+    {
+      "tool": "book_appointment",
+      "args": {
+        "appointment_type": "new_consultation",
+        "patient_phone": "9811111001",
+        "idempotency_key": "pm981111",
+        "patient_name": "Priya Malhotra",
+        "slot_id": 8660
+      },
+      "result": {
+        "booked": true,
+        "appointment_id": 1,
+        "doctor": "Dr. Priti Arya",
+        "start": "2026-07-16T17:00:00",
+        "spoken": "Thursday, 16 July at 5:00 PM",
+        "type": "New Consultation",
+        "status": "booked",
+        "patient": "Priya Malhotra",
+        "fee_inr": 1500
+      },
+      "latency_ms": 23.7
+    }
+  ]
+}

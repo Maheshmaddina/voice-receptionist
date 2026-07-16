@@ -1,0 +1,215 @@
+{
+  "id": "reschedule",
+  "description": "Existing patient moves an appointment to a different day.",
+  "passed": true,
+  "checks": [
+    {
+      "type": "booked_count",
+      "pass": true,
+      "detail": "booked_count=1 (want 1)"
+    },
+    {
+      "type": "slot_changed",
+      "pass": true,
+      "detail": "start 2026-07-16T18:00:00 -> 2026-07-20T10:30:00"
+    }
+  ],
+  "judge_questions": [
+    "Did the agent look up the appointment by phone before rescheduling?",
+    "Did the agent read back the new slot before confirming?"
+  ],
+  "turns": 9,
+  "tool_calls": 5,
+  "tool_latency_ms": {
+    "p50": 12.8,
+    "max": 18.1
+  },
+  "transcript": [
+    {
+      "speaker": "AGENT",
+      "text": "Thank you for calling Fortis Memorial Research Institute, Gurgaon. This is Diya. How may I help you today?"
+    },
+    {
+      "speaker": "PATIENT",
+      "text": "Hi, yes, hello. My son booked an appointment for me there, but something has come up and I won't be able to make it. I'm afraid I've completely forgotten the date and time, could you look it up for me? My number is 9811111006."
+    },
+    {
+      "speaker": "AGENT",
+      "text": "I've found your appointment, Mr. Krishnan. You are scheduled to see Dr. Anil Mandhani for a new consultation today, Thursday the sixteenth, at six o'clock in the evening. Would you like to cancel this appointment?"
+    },
+    {
+      "speaker": "PATIENT",
+      "text": "Oh, six o'clock today? Yes, that\u2019s the one. I\u2019m so sorry, but I have an urgent matter to attend to, so I definitely can't make it this evening. Is it possible to move it to sometime next week instead?"
+    },
+    {
+      "speaker": "AGENT",
+      "text": "I understand. I can certainly help you look for a new time with Dr. Anil Mandhani next week.\n\nI have several slots available on Monday, the twentieth of July. Would any of these work for you: nine thirty in the morning, ten thirty in the morning, or five o'clock in the evening?"
+    },
+    {
+      "speaker": "PATIENT",
+      "text": "Oh, the morning slots would be much better for me. Let's go with the ten thirty one, if that's still free?"
+    },
+    {
+      "speaker": "AGENT",
+      "text": "That is confirmed, Mr. Krishnan. Your appointment with Dr. Anil Mandhani has been moved to Monday, the twentieth of July, at ten thirty in the morning. Is there anything else I can help you with today?"
+    },
+    {
+      "speaker": "PATIENT",
+      "text": "No, that\u2019s everything, thank you so much for your help. Have a good day."
+    },
+    {
+      "speaker": "AGENT",
+      "text": "You're very welcome. I'm glad we could get that sorted for you. Have a wonderful day, and we look forward to seeing you on Monday. Goodbye."
+    }
+  ],
+  "tool_log": [
+    {
+      "tool": "lookup_appointments",
+      "args": {
+        "patient_phone": "9811111006"
+      },
+      "result": {
+        "patient": "Mohan Krishnan",
+        "appointments": [
+          {
+            "appointment_id": 6,
+            "doctor": "Dr. Anil Mandhani",
+            "start": "2026-07-16T18:00:00",
+            "spoken": "Thursday, 16 July at 6:00 PM",
+            "type": "New Consultation",
+            "status": "booked",
+            "patient": "Mohan Krishnan"
+          }
+        ]
+      },
+      "latency_ms": 12.8
+    },
+    {
+      "tool": "search_availability",
+      "args": {
+        "date_from": "2026-07-20T00:00:00",
+        "doctor_id": 1006,
+        "date_to": "2026-07-24T23:59:59"
+      },
+      "result": {
+        "error": "No doctor with id 1006."
+      },
+      "latency_ms": 6.5
+    },
+    {
+      "tool": "find_doctors",
+      "args": {
+        "query": "Anil Mandhani"
+      },
+      "result": {
+        "doctors": [
+          {
+            "doctor_id": 5,
+            "name": "Dr. Anil Mandhani",
+            "designation": "Chairman-Urology",
+            "departments": "Urology | Organ Transplant",
+            "experience_years": 35,
+            "consultation_fee_inr": 2000
+          },
+          {
+            "doctor_id": 4,
+            "name": "Dr. Anil Kumar Anand",
+            "designation": "Principal Director & HOD - Radiation Oncology",
+            "departments": "Oncology",
+            "experience_years": 31,
+            "consultation_fee_inr": 1500
+          },
+          {
+            "doctor_id": 48,
+            "name": "Dr. Manavita Mahajan",
+            "designation": "Director Obstetrics & Gynaecology",
+            "departments": "Obstetrics and Gynaecology",
+            "experience_years": 10,
+            "consultation_fee_inr": 1200
+          },
+          {
+            "doctor_id": 45,
+            "name": "Dr. Anand Sinha",
+            "designation": "Director Paediatrics",
+            "departments": "Paediatrics",
+            "experience_years": 17,
+            "consultation_fee_inr": 1200
+          },
+          {
+            "doctor_id": 62,
+            "name": "Dr. Vipul Nanda",
+            "designation": "Director Plastic Surgery",
+            "departments": "Plastic and Reconstructive Surgery",
+            "experience_years": 32,
+            "consultation_fee_inr": 1800
+          }
+        ],
+        "note": "multiple matches \u2014 ask the caller to choose"
+      },
+      "latency_ms": 14.1
+    },
+    {
+      "tool": "search_availability",
+      "args": {
+        "date_to": "2026-07-24T23:59:59",
+        "date_from": "2026-07-20T00:00:00",
+        "doctor_id": 5
+      },
+      "result": {
+        "doctor": "Dr. Anil Mandhani",
+        "slots": [
+          {
+            "slot_id": 361,
+            "start": "2026-07-20T09:30:00",
+            "spoken": "Monday, 20 July at 9:30 AM"
+          },
+          {
+            "slot_id": 363,
+            "start": "2026-07-20T10:30:00",
+            "spoken": "Monday, 20 July at 10:30 AM"
+          },
+          {
+            "slot_id": 364,
+            "start": "2026-07-20T11:00:00",
+            "spoken": "Monday, 20 July at 11:00 AM"
+          },
+          {
+            "slot_id": 365,
+            "start": "2026-07-20T11:30:00",
+            "spoken": "Monday, 20 July at 11:30 AM"
+          },
+          {
+            "slot_id": 366,
+            "start": "2026-07-20T12:00:00",
+            "spoken": "Monday, 20 July at 12:00 PM"
+          },
+          {
+            "slot_id": 368,
+            "start": "2026-07-20T17:00:00",
+            "spoken": "Monday, 20 July at 5:00 PM"
+          }
+        ]
+      },
+      "latency_ms": 8.4
+    },
+    {
+      "tool": "reschedule_appointment",
+      "args": {
+        "new_slot_id": 363,
+        "appointment_id": 6,
+        "idempotency_key": "resch716"
+      },
+      "result": {
+        "rescheduled": true,
+        "appointment_id": 6,
+        "doctor": "Dr. Anil Mandhani",
+        "start": "2026-07-20T10:30:00",
+        "spoken": "Monday, 20 July at 10:30 AM",
+        "type": "New Consultation",
+        "status": "booked",
+        "patient": "Mohan Krishnan"
+      },
+      "latency_ms": 18.1
+    }
+  ]
+}

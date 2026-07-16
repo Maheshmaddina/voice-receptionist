@@ -1,0 +1,241 @@
+{
+  "id": "vague_request",
+  "description": "Vague ask (\"heart doctor, sometime next week, mornings\") the agent must narrow down.",
+  "passed": true,
+  "checks": [
+    {
+      "type": "booked_count",
+      "pass": true,
+      "detail": "booked_count=1 (want 1)"
+    },
+    {
+      "type": "booked_department_contains",
+      "pass": true,
+      "detail": "departments=['Cardiac Sciences'] (want ~Cardiac)"
+    }
+  ],
+  "judge_questions": [
+    "Did the agent proactively narrow the vague request (department, time preference) instead of stalling?",
+    "Were all offered doctors and slots grounded in tool results?"
+  ],
+  "turns": 13,
+  "tool_calls": 4,
+  "tool_latency_ms": {
+    "p50": 10.6,
+    "max": 14.8
+  },
+  "transcript": [
+    {
+      "speaker": "AGENT",
+      "text": "Thank you for calling Fortis Memorial Research Institute, Gurgaon. This is Diya. How may I help you today?"
+    },
+    {
+      "speaker": "PATIENT",
+      "text": "Hello? Yes, hi. My regular doctor, he told me I need to see a heart doctor\u2014I think he called it a cardiologist? I\u2019ve been feeling a bit funny in the chest lately, you see, and he said I shouldn't wait too long. I was hoping to come in sometime next week, preferably in the morning if you have anything?"
+    },
+    {
+      "speaker": "AGENT",
+      "text": "I'm sorry to hear you've been feeling unwell, and I'd be happy to help you find a cardiologist. Please note that if you are experiencing any severe or urgent symptoms, you should visit our Emergency department immediately or call 112.\n\nFor a consultation next week, we have several specialists available, including Dr. Manjinder Sandhu, Dr. Udgeath Dhir, Dr. Nikhil Kumar, and Dr. Vinayak Agrawal. Do you have a preference, or would you like me to check availability for one of them?"
+    },
+    {
+      "speaker": "PATIENT",
+      "text": "Oh, goodness, no, I don't know any of those names. I'm not really good with these computer things or knowing who is who. I just need someone who can take a look at my heart, you know? Whoever you think is best or has the earliest opening next week in the morning would be just fine by me. Do you have anything like that?"
+    },
+    {
+      "speaker": "AGENT",
+      "text": "I understand. Since there are a few options, would you like me to check the morning availability for Dr. Manjinder Sandhu, who is a Principal Director in Cardiology, or would you prefer one of the others?"
+    },
+    {
+      "speaker": "PATIENT",
+      "text": "Oh, a Principal Director sounds like a very senior person, so that should be perfect. Yes, let's go with Dr. Sandhu. Do you have a morning slot for him sometime next week? I'm free any day, really, as long as it's before noon."
+    },
+    {
+      "speaker": "AGENT",
+      "text": "Dr. Sandhu has several morning openings next week. I have slots available on Monday, July 20th, at 9:30 AM, 10:00 AM, 10:30 AM, and 11:00 AM. He also has openings on Tuesday, July 21st, at 9:30 AM and 10:00 AM.\n\nWould any of those work for you?"
+    },
+    {
+      "speaker": "PATIENT",
+      "text": "Oh, that's wonderful, thank you. Let's do Monday, the 20th, at 10:00 AM. That gives me plenty of time to get there without rushing. Is that alright?"
+    },
+    {
+      "speaker": "AGENT",
+      "text": "That sounds perfect. I have you down for Monday, July 20th, at 10:00 AM with Dr. Manjinder Sandhu.\n\nTo finalize this, could you please provide your full name and a 10-digit mobile number? Also, will this be a new consultation, a follow-up, or a teleconsultation?"
+    },
+    {
+      "speaker": "PATIENT",
+      "text": "Oh, yes, of course. My name is Suresh Nair, and my number is 9811111002. And this is a new consultation, I haven't seen a heart doctor before. Is there anything else you need from me?"
+    },
+    {
+      "speaker": "AGENT",
+      "text": "Thank you, Mr. Nair. Just to confirm, I have you booked for a new consultation with Dr. Manjinder Sandhu on Monday, July 20th, at 10:00 AM. Your phone number is 9 8 1 1 1 1 1 0 0 2.\n\nDoes that all sound correct?"
+    },
+    {
+      "speaker": "PATIENT",
+      "text": "Yes, that sounds exactly right. Thank you so much for your help, you've made this very easy for me. I'll see you on Monday then. Goodbye."
+    },
+    {
+      "speaker": "AGENT",
+      "text": "You're very welcome, Mr. Nair. Your appointment is confirmed for Monday, July 20th, at 10:00 AM with Dr. Manjinder Sandhu. The consultation fee is 2000 rupees. We look forward to seeing you then. Is there anything else I can help you with today?"
+    }
+  ],
+  "tool_log": [
+    {
+      "tool": "find_doctors",
+      "args": {
+        "department": "Cardiac Sciences"
+      },
+      "result": {
+        "doctors": [
+          {
+            "doctor_id": 2,
+            "name": "Dr. (Col) Manjinder Sandhu",
+            "designation": "Principal Director Cardiology",
+            "departments": "Cardiac Sciences",
+            "experience_years": 35,
+            "consultation_fee_inr": 2000
+          },
+          {
+            "doctor_id": 27,
+            "name": "Dr. Udgeath Dhir",
+            "designation": "Principal Director Cardio Thoracic Vascular Surgery",
+            "departments": "Cardiac Sciences | Organ Transplant",
+            "experience_years": 18,
+            "consultation_fee_inr": 2000
+          },
+          {
+            "doctor_id": 33,
+            "name": "Dr. Anand Kumar",
+            "designation": "Senior Director Anaesthesia",
+            "departments": "Cardiac Sciences",
+            "experience_years": 21,
+            "consultation_fee_inr": 2500
+          },
+          {
+            "doctor_id": 36,
+            "name": "Dr. Nikhil Kumar",
+            "designation": "Senior Director Cardiology",
+            "departments": "Cardiac Sciences",
+            "experience_years": 39,
+            "consultation_fee_inr": 2000
+          },
+          {
+            "doctor_id": 41,
+            "name": "Dr. Vinayak Agrawal",
+            "designation": "Senior Director & Head of Non-Invasive Cardiology",
+            "departments": "Cardiac Sciences",
+            "experience_years": 24,
+            "consultation_fee_inr": 1800
+          }
+        ],
+        "note": "multiple matches \u2014 ask the caller to choose"
+      },
+      "latency_ms": 11.0
+    },
+    {
+      "tool": "search_availability",
+      "args": {
+        "date_from": "2026-07-20T00:00:00",
+        "date_to": "2026-07-26T23:59:59",
+        "department": "Cardiac Sciences",
+        "time_of_day": "morning"
+      },
+      "result": {
+        "disambiguate": [
+          {
+            "doctor_id": 2,
+            "name": "Dr. (Col) Manjinder Sandhu",
+            "designation": "Principal Director Cardiology",
+            "departments": "Cardiac Sciences",
+            "experience_years": 35,
+            "consultation_fee_inr": 2000
+          },
+          {
+            "doctor_id": 27,
+            "name": "Dr. Udgeath Dhir",
+            "designation": "Principal Director Cardio Thoracic Vascular Surgery",
+            "departments": "Cardiac Sciences | Organ Transplant",
+            "experience_years": 18,
+            "consultation_fee_inr": 2000
+          },
+          {
+            "doctor_id": 33,
+            "name": "Dr. Anand Kumar",
+            "designation": "Senior Director Anaesthesia",
+            "departments": "Cardiac Sciences",
+            "experience_years": 21,
+            "consultation_fee_inr": 2500
+          }
+        ],
+        "note": "ask the caller which doctor, then search again with doctor_id"
+      },
+      "latency_ms": 9.3
+    },
+    {
+      "tool": "search_availability",
+      "args": {
+        "doctor_id": 2,
+        "time_of_day": "morning",
+        "date_from": "2026-07-20T00:00:00",
+        "date_to": "2026-07-26T23:59:59"
+      },
+      "result": {
+        "doctor": "Dr. (Col) Manjinder Sandhu",
+        "slots": [
+          {
+            "slot_id": 97,
+            "start": "2026-07-20T09:30:00",
+            "spoken": "Monday, 20 July at 9:30 AM"
+          },
+          {
+            "slot_id": 98,
+            "start": "2026-07-20T10:00:00",
+            "spoken": "Monday, 20 July at 10:00 AM"
+          },
+          {
+            "slot_id": 99,
+            "start": "2026-07-20T10:30:00",
+            "spoken": "Monday, 20 July at 10:30 AM"
+          },
+          {
+            "slot_id": 100,
+            "start": "2026-07-20T11:00:00",
+            "spoken": "Monday, 20 July at 11:00 AM"
+          },
+          {
+            "slot_id": 109,
+            "start": "2026-07-21T09:30:00",
+            "spoken": "Tuesday, 21 July at 9:30 AM"
+          },
+          {
+            "slot_id": 110,
+            "start": "2026-07-21T10:00:00",
+            "spoken": "Tuesday, 21 July at 10:00 AM"
+          }
+        ]
+      },
+      "latency_ms": 10.2
+    },
+    {
+      "tool": "book_appointment",
+      "args": {
+        "patient_phone": "9811111002",
+        "idempotency_key": "snair202",
+        "slot_id": 98,
+        "patient_name": "Suresh Nair",
+        "appointment_type": "new_consultation"
+      },
+      "result": {
+        "booked": true,
+        "appointment_id": 2,
+        "doctor": "Dr. (Col) Manjinder Sandhu",
+        "start": "2026-07-20T10:00:00",
+        "spoken": "Monday, 20 July at 10:00 AM",
+        "type": "New Consultation",
+        "status": "booked",
+        "patient": "Suresh Nair",
+        "fee_inr": 2000
+      },
+      "latency_ms": 14.8
+    }
+  ]
+}

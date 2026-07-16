@@ -1,0 +1,358 @@
+{
+  "id": "wrong_phone_corrected",
+  "description": "Caller gives a phone number, then corrects one digit before confirming; booking must land on the corrected number.",
+  "passed": true,
+  "checks": [
+    {
+      "type": "booked_count",
+      "pass": true,
+      "detail": "booked_count=1 (want 1)"
+    },
+    {
+      "type": "booked_count",
+      "pass": true,
+      "detail": "booked_count=0 (want 0)"
+    }
+  ],
+  "judge_questions": [
+    "Did the agent use the corrected phone number in the final booking and read it back?"
+  ],
+  "turns": 11,
+  "tool_calls": 7,
+  "tool_latency_ms": {
+    "p50": 6.6,
+    "max": 16.9
+  },
+  "transcript": [
+    {
+      "speaker": "AGENT",
+      "text": "Thank you for calling Fortis Memorial Research Institute, Gurgaon. This is Diya. How may I help you today?"
+    },
+    {
+      "speaker": "PATIENT",
+      "text": "Hi, yes, I\u2019d like to book an appointment for an eye check-up, please. My vision has been a bit blurry lately."
+    },
+    {
+      "speaker": "AGENT",
+      "text": "I'm sorry to hear about your vision. We have several experienced ophthalmologists available. Would you prefer to see Dr. Parul Maheshwari Sharma, Dr. Shuchi Verma, Dr. Purnima Sood, Dr. Deepa Gupta, or Dr. Digvijay Singh?"
+    },
+    {
+      "speaker": "PATIENT",
+      "text": "Oh, I\u2019m not really sure... whoever has the earliest availability would be fine. My name is Lakshmi Iyer, by the way."
+    },
+    {
+      "speaker": "AGENT",
+      "text": "Thank you for that information, Lakshmi. The earliest available appointments are today, Thursday the sixteenth, at five o'clock in the evening with either Dr. Parul Maheshwari Sharma or Dr. Digvijay Singh. Would you like to book one of those?"
+    },
+    {
+      "speaker": "PATIENT",
+      "text": "Yes, five o'clock works for me. Let's go with Dr. Parul Maheshwari Sharma."
+    },
+    {
+      "speaker": "AGENT",
+      "text": "Great choice. To confirm, that is Dr. Parul Maheshwari Sharma for a new consultation today, Thursday the sixteenth, at five o'clock in the evening. Could you please provide your 10-digit mobile number so I can finalize the booking for you?"
+    },
+    {
+      "speaker": "PATIENT",
+      "text": "Sure, it's 9811111000. Oh, wait, sorry, it ends in zero-zero-nine, that's 9811111009."
+    },
+    {
+      "speaker": "AGENT",
+      "text": "Your appointment is confirmed, Lakshmi. You are booked with Dr. Parul Maheshwari Sharma for a new consultation today, Thursday the sixteenth, at five o'clock in the evening. The consultation fee is 1600 INR. Is there anything else I can help you with today?"
+    },
+    {
+      "speaker": "PATIENT",
+      "text": "No, that's all, thank you so much for your help. Goodbye!"
+    },
+    {
+      "speaker": "AGENT",
+      "text": "You're very welcome, Lakshmi. We look forward to seeing you at five o'clock. Have a good day and goodbye!"
+    }
+  ],
+  "tool_log": [
+    {
+      "tool": "find_doctors",
+      "args": {
+        "department": "Ophthalmology"
+      },
+      "result": {
+        "doctors": [
+          {
+            "doctor_id": 17,
+            "name": "Dr. Parul Maheshwari Sharma",
+            "designation": "Principal Director & HOD - Ophthalmology",
+            "departments": "Ophthalmology",
+            "experience_years": 18,
+            "consultation_fee_inr": 1600
+          },
+          {
+            "doctor_id": 64,
+            "name": "Dr. (Maj) Shuchi Verma",
+            "designation": "Principal Consultant - Ophthalmology",
+            "departments": "Ophthalmology",
+            "experience_years": 20,
+            "consultation_fee_inr": 1500
+          },
+          {
+            "doctor_id": 75,
+            "name": "Dr. Purnima Sood",
+            "designation": "Additional Director Ophthalmology",
+            "departments": "Ophthalmology",
+            "experience_years": 26,
+            "consultation_fee_inr": 1500
+          },
+          {
+            "doctor_id": 90,
+            "name": "Dr. Deepa Gupta",
+            "designation": "Senior Consultant Ophthalmology",
+            "departments": "Ophthalmology",
+            "experience_years": 15,
+            "consultation_fee_inr": 1500
+          },
+          {
+            "doctor_id": 92,
+            "name": "Dr. Digvijay Singh",
+            "designation": "Senior Consultant Ophthalmology",
+            "departments": "Ophthalmology",
+            "experience_years": 18,
+            "consultation_fee_inr": 1500
+          }
+        ],
+        "note": "multiple matches \u2014 ask the caller to choose"
+      },
+      "latency_ms": 12.1
+    },
+    {
+      "tool": "search_availability",
+      "args": {
+        "doctor_id": 17
+      },
+      "result": {
+        "doctor": "Dr. Parul Maheshwari Sharma",
+        "slots": [
+          {
+            "slot_id": 1352,
+            "start": "2026-07-16T17:00:00",
+            "spoken": "Thursday, 16 July at 5:00 PM"
+          },
+          {
+            "slot_id": 1353,
+            "start": "2026-07-16T17:30:00",
+            "spoken": "Thursday, 16 July at 5:30 PM"
+          },
+          {
+            "slot_id": 1354,
+            "start": "2026-07-16T18:00:00",
+            "spoken": "Thursday, 16 July at 6:00 PM"
+          },
+          {
+            "slot_id": 1355,
+            "start": "2026-07-16T18:30:00",
+            "spoken": "Thursday, 16 July at 6:30 PM"
+          },
+          {
+            "slot_id": 1358,
+            "start": "2026-07-18T10:00:00",
+            "spoken": "Saturday, 18 July at 10:00 AM"
+          },
+          {
+            "slot_id": 1359,
+            "start": "2026-07-18T10:30:00",
+            "spoken": "Saturday, 18 July at 10:30 AM"
+          }
+        ]
+      },
+      "latency_ms": 10.8
+    },
+    {
+      "tool": "search_availability",
+      "args": {
+        "doctor_id": 64
+      },
+      "result": {
+        "doctor": "Dr. (Maj) Shuchi Verma",
+        "slots": [
+          {
+            "slot_id": 5293,
+            "start": "2026-07-18T09:30:00",
+            "spoken": "Saturday, 18 July at 9:30 AM"
+          },
+          {
+            "slot_id": 5295,
+            "start": "2026-07-18T10:30:00",
+            "spoken": "Saturday, 18 July at 10:30 AM"
+          },
+          {
+            "slot_id": 5296,
+            "start": "2026-07-18T11:00:00",
+            "spoken": "Saturday, 18 July at 11:00 AM"
+          },
+          {
+            "slot_id": 5297,
+            "start": "2026-07-18T11:30:00",
+            "spoken": "Saturday, 18 July at 11:30 AM"
+          },
+          {
+            "slot_id": 5299,
+            "start": "2026-07-18T12:30:00",
+            "spoken": "Saturday, 18 July at 12:30 PM"
+          },
+          {
+            "slot_id": 5300,
+            "start": "2026-07-18T17:00:00",
+            "spoken": "Saturday, 18 July at 5:00 PM"
+          }
+        ]
+      },
+      "latency_ms": 6.6
+    },
+    {
+      "tool": "search_availability",
+      "args": {
+        "doctor_id": 75
+      },
+      "result": {
+        "doctor": "Dr. Purnima Sood",
+        "slots": [
+          {
+            "slot_id": 6217,
+            "start": "2026-07-17T09:30:00",
+            "spoken": "Friday, 17 July at 9:30 AM"
+          },
+          {
+            "slot_id": 6218,
+            "start": "2026-07-17T10:00:00",
+            "spoken": "Friday, 17 July at 10:00 AM"
+          },
+          {
+            "slot_id": 6219,
+            "start": "2026-07-17T10:30:00",
+            "spoken": "Friday, 17 July at 10:30 AM"
+          },
+          {
+            "slot_id": 6220,
+            "start": "2026-07-17T11:00:00",
+            "spoken": "Friday, 17 July at 11:00 AM"
+          },
+          {
+            "slot_id": 6221,
+            "start": "2026-07-17T11:30:00",
+            "spoken": "Friday, 17 July at 11:30 AM"
+          },
+          {
+            "slot_id": 6222,
+            "start": "2026-07-17T12:00:00",
+            "spoken": "Friday, 17 July at 12:00 PM"
+          }
+        ]
+      },
+      "latency_ms": 4.5
+    },
+    {
+      "tool": "search_availability",
+      "args": {
+        "doctor_id": 90
+      },
+      "result": {
+        "doctor": "Dr. Deepa Gupta",
+        "slots": [
+          {
+            "slot_id": 7477,
+            "start": "2026-07-17T09:30:00",
+            "spoken": "Friday, 17 July at 9:30 AM"
+          },
+          {
+            "slot_id": 7479,
+            "start": "2026-07-17T10:30:00",
+            "spoken": "Friday, 17 July at 10:30 AM"
+          },
+          {
+            "slot_id": 7480,
+            "start": "2026-07-17T11:00:00",
+            "spoken": "Friday, 17 July at 11:00 AM"
+          },
+          {
+            "slot_id": 7483,
+            "start": "2026-07-17T12:30:00",
+            "spoken": "Friday, 17 July at 12:30 PM"
+          },
+          {
+            "slot_id": 7484,
+            "start": "2026-07-17T17:00:00",
+            "spoken": "Friday, 17 July at 5:00 PM"
+          },
+          {
+            "slot_id": 7485,
+            "start": "2026-07-17T17:30:00",
+            "spoken": "Friday, 17 July at 5:30 PM"
+          }
+        ]
+      },
+      "latency_ms": 3.9
+    },
+    {
+      "tool": "search_availability",
+      "args": {
+        "doctor_id": 92
+      },
+      "result": {
+        "doctor": "Dr. Digvijay Singh",
+        "slots": [
+          {
+            "slot_id": 7652,
+            "start": "2026-07-16T17:00:00",
+            "spoken": "Thursday, 16 July at 5:00 PM"
+          },
+          {
+            "slot_id": 7653,
+            "start": "2026-07-16T17:30:00",
+            "spoken": "Thursday, 16 July at 5:30 PM"
+          },
+          {
+            "slot_id": 7654,
+            "start": "2026-07-16T18:00:00",
+            "spoken": "Thursday, 16 July at 6:00 PM"
+          },
+          {
+            "slot_id": 7659,
+            "start": "2026-07-18T10:30:00",
+            "spoken": "Saturday, 18 July at 10:30 AM"
+          },
+          {
+            "slot_id": 7660,
+            "start": "2026-07-18T11:00:00",
+            "spoken": "Saturday, 18 July at 11:00 AM"
+          },
+          {
+            "slot_id": 7661,
+            "start": "2026-07-18T11:30:00",
+            "spoken": "Saturday, 18 July at 11:30 AM"
+          }
+        ]
+      },
+      "latency_ms": 3.7
+    },
+    {
+      "tool": "book_appointment",
+      "args": {
+        "patient_name": "Lakshmi Iyer",
+        "appointment_type": "new_consultation",
+        "idempotency_key": "LAKSHMI1",
+        "patient_phone": "9811111009",
+        "slot_id": 1352
+      },
+      "result": {
+        "booked": true,
+        "appointment_id": 10,
+        "doctor": "Dr. Parul Maheshwari Sharma",
+        "start": "2026-07-16T17:00:00",
+        "spoken": "Thursday, 16 July at 5:00 PM",
+        "type": "New Consultation",
+        "status": "booked",
+        "patient": "Lakshmi Iyer",
+        "fee_inr": 1600
+      },
+      "latency_ms": 16.9
+    }
+  ]
+}

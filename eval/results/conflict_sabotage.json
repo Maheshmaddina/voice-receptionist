@@ -1,0 +1,234 @@
+{
+  "id": "conflict_sabotage",
+  "description": "The first slot the agent offers gets booked by a rival caller mid-conversation; the booking must survive the conflict.",
+  "passed": true,
+  "checks": [
+    {
+      "type": "booked_count",
+      "pass": true,
+      "detail": "booked_count=1 (want 1)"
+    }
+  ],
+  "judge_questions": [
+    "When the booking failed, did the agent apologize briefly and immediately offer alternatives from the tool result?",
+    "Did the caller end the call with a confirmed appointment?"
+  ],
+  "turns": 15,
+  "tool_calls": 4,
+  "tool_latency_ms": {
+    "p50": 10.2,
+    "max": 14.6
+  },
+  "transcript": [
+    {
+      "speaker": "AGENT",
+      "text": "Thank you for calling Fortis Memorial Research Institute, Gurgaon. This is Diya. How may I help you today?"
+    },
+    {
+      "speaker": "PATIENT",
+      "text": "Hi, Diya. I\u2019ve been having some recurring sinus trouble lately and I need to get an ENT check-up as soon as possible. Can you help me book an appointment?"
+    },
+    {
+      "speaker": "AGENT",
+      "text": "I can certainly help you with that. We have Dr. Atul Kumar Mittal, who is the Chairman of ENT, available for consultations. His fee is two thousand rupees. Would you like me to check his availability for you?"
+    },
+    {
+      "speaker": "PATIENT",
+      "text": "Yes, please. That sounds perfect. Can you check when his earliest slot is? I\u2019d like to get this sorted out quickly."
+    },
+    {
+      "speaker": "AGENT",
+      "text": "Dr. Mittal has an opening this Saturday, July eighteenth. The earliest slots are at ten thirty in the morning, twelve noon, or five in the evening. Which of those works best for you?"
+    },
+    {
+      "speaker": "PATIENT",
+      "text": "I'll take the ten-thirty slot, please. That works best for me."
+    },
+    {
+      "speaker": "AGENT",
+      "text": "Great. I have you down for Dr. Atul Kumar Mittal on Saturday, July eighteenth, at ten thirty in the morning. To finalize this, could I please have your full name and a ten-digit mobile number? Also, will this be a new consultation, a follow-up, or a teleconsultation?"
+    },
+    {
+      "speaker": "PATIENT",
+      "text": "My name is Rakesh Yadav. The number is 9811111004. It\u2019s a new consultation."
+    },
+    {
+      "speaker": "AGENT",
+      "text": "Thank you, Rakesh. Let me confirm those details. You are booking a new consultation with Dr. Atul Kumar Mittal for Saturday, July eighteenth, at ten thirty in the morning. Your phone number is 9 8 1 1 1 1 1 0 0 4. Is that all correct?"
+    },
+    {
+      "speaker": "PATIENT",
+      "text": "Yes, that\u2019s all correct. Is the booking confirmed then?"
+    },
+    {
+      "speaker": "AGENT",
+      "text": "I am very sorry, but that slot was just taken by another patient. Would you like to book the next available time on Saturday, July eighteenth, at twelve noon, or perhaps five in the evening?"
+    },
+    {
+      "speaker": "PATIENT",
+      "text": "That's fine, I'll take the twelve noon slot instead. Please lock that in for me."
+    },
+    {
+      "speaker": "AGENT",
+      "text": "Your appointment is now confirmed. You are booked for a new consultation with Dr. Atul Kumar Mittal on Saturday, July eighteenth, at twelve noon. Is there anything else I can help you with today?"
+    },
+    {
+      "speaker": "PATIENT",
+      "text": "No, that\u2019s all I needed. Thanks for your help, Diya. Goodbye."
+    },
+    {
+      "speaker": "AGENT",
+      "text": "You're very welcome, Rakesh. Thank you for choosing Fortis Memorial Research Institute. Have a wonderful day, and goodbye."
+    }
+  ],
+  "tool_log": [
+    {
+      "tool": "find_doctors",
+      "args": {
+        "department": "ENT"
+      },
+      "result": {
+        "doctors": [
+          {
+            "doctor_id": 2,
+            "name": "Dr. (Col) Manjinder Sandhu",
+            "designation": "Principal Director Cardiology",
+            "departments": "Cardiac Sciences",
+            "experience_years": 35,
+            "consultation_fee_inr": 2000
+          },
+          {
+            "doctor_id": 3,
+            "name": "Dr. Ajay Kumar Kriplani",
+            "designation": "Principal Director & HOD Lap GI, GI Onco, Bariatric & MIS Surgery",
+            "departments": "General Surgery | Gastroenterology and Hepatobiliary Sciences",
+            "experience_years": 40,
+            "consultation_fee_inr": 1500
+          },
+          {
+            "doctor_id": 7,
+            "name": "Dr. Arvind Kumar Khurana",
+            "designation": "Principal Director Gastroenterology",
+            "departments": "Gastroenterology and Hepatobiliary Sciences",
+            "experience_years": 35,
+            "consultation_fee_inr": 1500
+          },
+          {
+            "doctor_id": 8,
+            "name": "Dr. Atul Kumar Mittal",
+            "designation": "Chairman ENT",
+            "departments": "ENT",
+            "experience_years": 33,
+            "consultation_fee_inr": 2000
+          },
+          {
+            "doctor_id": 11,
+            "name": "Dr. Gourdas Choudhuri",
+            "designation": "Chairman-Gastroenterology",
+            "departments": "Gastroenterology and Hepatobiliary Sciences",
+            "experience_years": 42,
+            "consultation_fee_inr": 2000
+          }
+        ],
+        "note": "multiple matches \u2014 ask the caller to choose"
+      },
+      "latency_ms": 8.5
+    },
+    {
+      "tool": "search_availability",
+      "args": {
+        "date_from": "2026-07-16T13:46:00",
+        "doctor_id": 8
+      },
+      "result": {
+        "doctor": "Dr. Atul Kumar Mittal",
+        "slots": [
+          {
+            "slot_id": 591,
+            "start": "2026-07-18T10:30:00",
+            "spoken": "Saturday, 18 July at 10:30 AM"
+          },
+          {
+            "slot_id": 594,
+            "start": "2026-07-18T12:00:00",
+            "spoken": "Saturday, 18 July at 12:00 PM"
+          },
+          {
+            "slot_id": 596,
+            "start": "2026-07-18T17:00:00",
+            "spoken": "Saturday, 18 July at 5:00 PM"
+          },
+          {
+            "slot_id": 597,
+            "start": "2026-07-18T17:30:00",
+            "spoken": "Saturday, 18 July at 5:30 PM"
+          },
+          {
+            "slot_id": 600,
+            "start": "2026-07-18T19:00:00",
+            "spoken": "Saturday, 18 July at 7:00 PM"
+          },
+          {
+            "slot_id": 602,
+            "start": "2026-07-20T10:00:00",
+            "spoken": "Monday, 20 July at 10:00 AM"
+          }
+        ]
+      },
+      "latency_ms": 9.3
+    },
+    {
+      "tool": "book_appointment",
+      "args": {
+        "slot_id": 591,
+        "patient_name": "Rakesh Yadav",
+        "idempotency_key": "RY981111",
+        "appointment_type": "new_consultation",
+        "patient_phone": "9811111004"
+      },
+      "result": {
+        "error": "That slot was just taken.",
+        "alternatives": [
+          {
+            "slot_id": 594,
+            "start": "2026-07-18T12:00:00",
+            "spoken": "Saturday, 18 July at 12:00 PM"
+          },
+          {
+            "slot_id": 596,
+            "start": "2026-07-18T17:00:00",
+            "spoken": "Saturday, 18 July at 5:00 PM"
+          },
+          {
+            "slot_id": 597,
+            "start": "2026-07-18T17:30:00",
+            "spoken": "Saturday, 18 July at 5:30 PM"
+          }
+        ]
+      },
+      "latency_ms": 11.1
+    },
+    {
+      "tool": "book_appointment",
+      "args": {
+        "slot_id": 594,
+        "patient_phone": "9811111004",
+        "patient_name": "Rakesh Yadav",
+        "appointment_type": "new_consultation",
+        "idempotency_key": "RY981112"
+      },
+      "result": {
+        "booked": true,
+        "appointment_id": 9,
+        "doctor": "Dr. Atul Kumar Mittal",
+        "start": "2026-07-18T12:00:00",
+        "spoken": "Saturday, 18 July at 12:00 PM",
+        "type": "New Consultation",
+        "status": "booked",
+        "patient": "Rakesh Yadav",
+        "fee_inr": 2000
+      },
+      "latency_ms": 14.6
+    }
+  ]
+}

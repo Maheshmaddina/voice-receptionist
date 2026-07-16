@@ -1,0 +1,380 @@
+{
+  "ran_at": "2026-07-16T13:49:23.608641+05:30",
+  "model": "gemini-3.1-flash-lite",
+  "backend": "http://localhost:8000",
+  "scenarios": 9,
+  "passed": 9,
+  "results": [
+    {
+      "id": "simple_booking",
+      "passed": true,
+      "checks": [
+        {
+          "type": "booked_count",
+          "pass": true,
+          "detail": "booked_count=1 (want 1)"
+        },
+        {
+          "type": "booked_department_contains",
+          "pass": true,
+          "detail": "departments=['Dermatology'] (want ~Dermatology)"
+        }
+      ],
+      "turns": 13,
+      "tool_calls": 7,
+      "tool_latency_ms": {
+        "p50": 6.5,
+        "max": 23.7
+      },
+      "judge": [
+        {
+          "question": "Groundedness: did every doctor name, time, fee, and department the agent stated come from a tool result in the tool log (no invented facts)?",
+          "verdict": "yes",
+          "reason": "All information provided by the agent regarding doctor names, availability, and appointment details was retrieved directly from the tool logs."
+        },
+        {
+          "question": "Confirmation: did the agent read back name, phone, and slot and get a clear yes BEFORE any booking/reschedule/cancel tool call?",
+          "verdict": "no",
+          "reason": "The agent performed the booking tool call before confirming the patient's name and phone number."
+        },
+        {
+          "question": "Did the agent confirm the patient's name, phone number, and slot before booking?",
+          "verdict": "no",
+          "reason": "The agent called the booking tool immediately after the patient agreed to the slot, only asking for the name and phone number after the booking was already processed."
+        },
+        {
+          "question": "Did the agent only mention doctors and times that appeared in tool results?",
+          "verdict": "yes",
+          "reason": "The agent restricted all mentions of doctors and availability to the data returned by the tool calls."
+        }
+      ]
+    },
+    {
+      "id": "vague_request",
+      "passed": true,
+      "checks": [
+        {
+          "type": "booked_count",
+          "pass": true,
+          "detail": "booked_count=1 (want 1)"
+        },
+        {
+          "type": "booked_department_contains",
+          "pass": true,
+          "detail": "departments=['Cardiac Sciences'] (want ~Cardiac)"
+        }
+      ],
+      "turns": 13,
+      "tool_calls": 4,
+      "tool_latency_ms": {
+        "p50": 10.6,
+        "max": 14.8
+      },
+      "judge": [
+        {
+          "question": "Groundedness: did every doctor name, time, fee, and department the agent stated come from a tool result in the tool log (no invented facts)?",
+          "verdict": "yes",
+          "reason": "All information provided by the agent, including doctor names, availability, and fees, matches the data returned by the tool calls."
+        },
+        {
+          "question": "Confirmation: did the agent read back name, phone, and slot and get a clear yes BEFORE any booking/reschedule/cancel tool call?",
+          "verdict": "no",
+          "reason": "The agent performed the booking tool call before confirming the patient's name and phone number with the patient."
+        },
+        {
+          "question": "Did the agent proactively narrow the vague request (department, time preference) instead of stalling?",
+          "verdict": "yes",
+          "reason": "The agent immediately identified the department and offered specific doctor options to narrow down the patient's request."
+        },
+        {
+          "question": "Were all offered doctors and slots grounded in tool results?",
+          "verdict": "yes",
+          "reason": "All doctors and time slots mentioned by the agent were explicitly present in the tool log results."
+        }
+      ]
+    },
+    {
+      "id": "change_of_mind",
+      "passed": true,
+      "checks": [
+        {
+          "type": "booked_count",
+          "pass": true,
+          "detail": "booked_count=1 (want 1)"
+        },
+        {
+          "type": "booked_department_contains",
+          "pass": true,
+          "detail": "departments=['Orthopaedics'] (want ~Orthopaedics)"
+        }
+      ],
+      "turns": 13,
+      "tool_calls": 4,
+      "tool_latency_ms": {
+        "p50": 9.3,
+        "max": 15.8
+      },
+      "judge": [
+        {
+          "question": "Groundedness: did every doctor name, time, fee, and department the agent stated come from a tool result in the tool log (no invented facts)?",
+          "verdict": "yes",
+          "reason": "All information provided by the agent, including doctor names and available slots, was directly retrieved from the tool logs."
+        },
+        {
+          "question": "Confirmation: did the agent read back name, phone, and slot and get a clear yes BEFORE any booking/reschedule/cancel tool call?",
+          "verdict": "yes",
+          "reason": "The agent confirmed the patient's details and appointment slot before executing the booking tool call."
+        },
+        {
+          "question": "Did the agent follow the caller's latest intent and re-search instead of booking the earlier option?",
+          "verdict": "yes",
+          "reason": "The agent correctly pivoted to searching for orthopaedic doctors when the patient changed their request from dermatology to knee pain."
+        },
+        {
+          "question": "Did the agent avoid booking the dermatology appointment?",
+          "verdict": "yes",
+          "reason": "The agent never initiated a booking for the dermatology department and only proceeded with the orthopaedic appointment."
+        }
+      ]
+    },
+    {
+      "id": "conflict_sabotage",
+      "passed": true,
+      "checks": [
+        {
+          "type": "booked_count",
+          "pass": true,
+          "detail": "booked_count=1 (want 1)"
+        }
+      ],
+      "turns": 15,
+      "tool_calls": 4,
+      "tool_latency_ms": {
+        "p50": 10.2,
+        "max": 14.6
+      },
+      "judge": [
+        {
+          "question": "Groundedness: did every doctor name, time, fee, and department the agent stated come from a tool result in the tool log (no invented facts)?",
+          "verdict": "yes",
+          "reason": "All information provided by the agent regarding the doctor, fees, and available slots was retrieved directly from the tool logs."
+        },
+        {
+          "question": "Confirmation: did the agent read back name, phone, and slot and get a clear yes BEFORE any booking/reschedule/cancel tool call?",
+          "verdict": "yes",
+          "reason": "The agent confirmed the details with the patient and received a 'yes' before attempting the first booking call."
+        },
+        {
+          "question": "When the booking failed, did the agent apologize briefly and immediately offer alternatives from the tool result?",
+          "verdict": "yes",
+          "reason": "The agent apologized for the conflict and immediately offered the next available slots provided by the tool output."
+        },
+        {
+          "question": "Did the caller end the call with a confirmed appointment?",
+          "verdict": "yes",
+          "reason": "The final tool call successfully booked the appointment, and the agent confirmed this to the patient before the call ended."
+        }
+      ]
+    },
+    {
+      "id": "impossible_time",
+      "passed": true,
+      "checks": [
+        {
+          "type": "booked_count",
+          "pass": true,
+          "detail": "booked_count=1 (want 1)"
+        },
+        {
+          "type": "booked_department_contains",
+          "pass": true,
+          "detail": "departments=['Paediatrics'] (want ~Paediatrics)"
+        }
+      ],
+      "turns": 7,
+      "tool_calls": 3,
+      "tool_latency_ms": {
+        "p50": 9.9,
+        "max": 10.6
+      },
+      "judge": [
+        {
+          "question": "Groundedness: did every doctor name, time, fee, and department the agent stated come from a tool result in the tool log (no invented facts)?",
+          "verdict": "yes",
+          "reason": "All doctor names, fees, and available slots mentioned by the agent are directly supported by the tool logs."
+        },
+        {
+          "question": "Confirmation: did the agent read back name, phone, and slot and get a clear yes BEFORE any booking/reschedule/cancel tool call?",
+          "verdict": "no",
+          "reason": "The agent performed the booking tool call before confirming the details with the patient."
+        },
+        {
+          "question": "Did the agent avoid inventing a 3 PM slot and clearly offer real alternatives from tool results?",
+          "verdict": "yes",
+          "reason": "The agent correctly identified that no 3 PM slot existed and offered the specific alternatives provided by the search_availability tool."
+        }
+      ]
+    },
+    {
+      "id": "reschedule",
+      "passed": true,
+      "checks": [
+        {
+          "type": "booked_count",
+          "pass": true,
+          "detail": "booked_count=1 (want 1)"
+        },
+        {
+          "type": "slot_changed",
+          "pass": true,
+          "detail": "start 2026-07-16T18:00:00 -> 2026-07-20T10:30:00"
+        }
+      ],
+      "turns": 9,
+      "tool_calls": 5,
+      "tool_latency_ms": {
+        "p50": 12.8,
+        "max": 18.1
+      },
+      "judge": [
+        {
+          "question": "Groundedness: did every doctor name, time, fee, and department the agent stated come from a tool result in the tool log (no invented facts)?",
+          "verdict": "yes",
+          "reason": "All information provided by the agent regarding the doctor's name and appointment slots was retrieved directly from the tool outputs."
+        },
+        {
+          "question": "Confirmation: did the agent read back name, phone, and slot and get a clear yes BEFORE any booking/reschedule/cancel tool call?",
+          "verdict": "no",
+          "reason": "The agent did not read back the phone number or confirm the specific slot details with the patient before executing the reschedule tool call."
+        },
+        {
+          "question": "Did the agent look up the appointment by phone before rescheduling?",
+          "verdict": "yes",
+          "reason": "The agent successfully used the lookup_appointments tool with the patient's phone number before proceeding with the reschedule."
+        },
+        {
+          "question": "Did the agent read back the new slot before confirming?",
+          "verdict": "yes",
+          "reason": "The agent confirmed the new appointment details to the patient after the reschedule tool call was completed."
+        }
+      ]
+    },
+    {
+      "id": "cancel",
+      "passed": true,
+      "checks": [
+        {
+          "type": "cancelled",
+          "pass": true,
+          "detail": "appointment 7 status=cancelled"
+        },
+        {
+          "type": "booked_count",
+          "pass": true,
+          "detail": "booked_count=0 (want 0)"
+        }
+      ],
+      "turns": 9,
+      "tool_calls": 2,
+      "tool_latency_ms": {
+        "p50": 11.7,
+        "max": 14.4
+      },
+      "judge": [
+        {
+          "question": "Groundedness: did every doctor name, time, fee, and department the agent stated come from a tool result in the tool log (no invented facts)?",
+          "verdict": "yes",
+          "reason": "The doctor name and appointment time stated by the agent match the data returned by the lookup_appointments tool."
+        },
+        {
+          "question": "Confirmation: did the agent read back name, phone, and slot and get a clear yes BEFORE any booking/reschedule/cancel tool call?",
+          "verdict": "no",
+          "reason": "The agent read back the name and appointment slot, but did not read back the phone number before proceeding with the cancellation."
+        },
+        {
+          "question": "Did the agent verify which appointment to cancel before cancelling?",
+          "verdict": "yes",
+          "reason": "The agent identified the specific appointment details and received confirmation from the patient before executing the cancellation tool."
+        }
+      ]
+    },
+    {
+      "id": "unknown_doctor",
+      "passed": true,
+      "checks": [
+        {
+          "type": "booked_count",
+          "pass": true,
+          "detail": "booked_count=0 (want 0)"
+        }
+      ],
+      "turns": 7,
+      "tool_calls": 2,
+      "tool_latency_ms": {
+        "p50": 13.1,
+        "max": 13.2
+      },
+      "judge": [
+        {
+          "question": "Groundedness: did every doctor name, time, fee, and department the agent stated come from a tool result in the tool log (no invented facts)?",
+          "verdict": "yes",
+          "reason": "The agent correctly stated that no doctor by the name of Ramesh Batra was found in the system, which aligns with the tool results."
+        },
+        {
+          "question": "Confirmation: did the agent read back name, phone, and slot and get a clear yes BEFORE any booking/reschedule/cancel tool call?",
+          "verdict": "n/a",
+          "reason": "No booking, reschedule, or cancellation was attempted, so this confirmation step was not applicable."
+        },
+        {
+          "question": "Did the agent avoid pretending Dr. Ramesh Batra works at FMRI or inventing his availability?",
+          "verdict": "yes",
+          "reason": "The agent consistently maintained that the doctor was not on staff and did not invent any availability."
+        },
+        {
+          "question": "Did the agent offer a helpful next step (department search / spelling check) before accepting the caller's refusal?",
+          "verdict": "yes",
+          "reason": "The agent offered to check for a different name or search by department before the caller decided to end the conversation."
+        }
+      ]
+    },
+    {
+      "id": "wrong_phone_corrected",
+      "passed": true,
+      "checks": [
+        {
+          "type": "booked_count",
+          "pass": true,
+          "detail": "booked_count=1 (want 1)"
+        },
+        {
+          "type": "booked_count",
+          "pass": true,
+          "detail": "booked_count=0 (want 0)"
+        }
+      ],
+      "turns": 11,
+      "tool_calls": 7,
+      "tool_latency_ms": {
+        "p50": 6.6,
+        "max": 16.9
+      },
+      "judge": [
+        {
+          "question": "Groundedness: did every doctor name, time, fee, and department the agent stated come from a tool result in the tool log (no invented facts)?",
+          "verdict": "yes",
+          "reason": "All information provided by the agent, including doctor names, availability, and fees, matches the data returned by the tool calls."
+        },
+        {
+          "question": "Confirmation: did the agent read back name, phone, and slot and get a clear yes BEFORE any booking/reschedule/cancel tool call?",
+          "verdict": "no",
+          "reason": "The agent requested the phone number after the patient had already agreed to the slot, and the booking tool was called after the patient provided the number, but the agent did not perform a final confirmation of all details after the phone number was corrected."
+        },
+        {
+          "question": "Did the agent use the corrected phone number in the final booking and read it back?",
+          "verdict": "no",
+          "reason": "The agent used the correct phone number in the booking tool, but failed to read the final confirmed phone number back to the patient."
+        }
+      ]
+    }
+  ]
+}

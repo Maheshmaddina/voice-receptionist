@@ -1,0 +1,239 @@
+{
+  "id": "change_of_mind",
+  "description": "Caller starts booking dermatology, then mid-call switches to orthopaedics for knee pain.",
+  "passed": true,
+  "checks": [
+    {
+      "type": "booked_count",
+      "pass": true,
+      "detail": "booked_count=1 (want 1)"
+    },
+    {
+      "type": "booked_department_contains",
+      "pass": true,
+      "detail": "departments=['Orthopaedics'] (want ~Orthopaedics)"
+    }
+  ],
+  "judge_questions": [
+    "Did the agent follow the caller's latest intent and re-search instead of booking the earlier option?",
+    "Did the agent avoid booking the dermatology appointment?"
+  ],
+  "turns": 13,
+  "tool_calls": 4,
+  "tool_latency_ms": {
+    "p50": 9.3,
+    "max": 15.8
+  },
+  "transcript": [
+    {
+      "speaker": "AGENT",
+      "text": "Thank you for calling Fortis Memorial Research Institute, Gurgaon. This is Diya. How may I help you today?"
+    },
+    {
+      "speaker": "PATIENT",
+      "text": "Hi, yes, I was hoping to book an appointment with a dermatologist. I've had this persistent rash on my arm for a few days now."
+    },
+    {
+      "speaker": "AGENT",
+      "text": "I'm sorry to hear about your rash. We have several dermatologists available. Would you prefer to see Dr. Naresh Jain, Dr. Priti Arya, Dr. Rashmi Sharma, Dr. Sachin Dhawan, or Dr. Sonal Bansal?"
+    },
+    {
+      "speaker": "PATIENT",
+      "text": "Oh, um, actually, wait. To be honest, the rash is annoying, but my knee pain has been getting so much worse lately that I can barely walk. I think I need to see an orthopaedic doctor instead. Do you have any openings for that today or tomorrow?"
+    },
+    {
+      "speaker": "AGENT",
+      "text": "I understand. It's important to get that knee pain looked at. We have several orthopaedic specialists available. Would you like to see Dr. Jayant Arora, Dr. Subhash Jangid, Dr. Anuj Chawla, Dr. Debashish Chanda, or Dr. Amit Chaudhry?"
+    },
+    {
+      "speaker": "PATIENT",
+      "text": "I've heard good things about Dr. Subhash Jangid. Do you have anything available with him for tomorrow morning?"
+    },
+    {
+      "speaker": "AGENT",
+      "text": "Dr. Subhash Jangid has openings tomorrow morning at nine thirty, ten o'clock, or eleven thirty. Which of those times works best for you?"
+    },
+    {
+      "speaker": "PATIENT",
+      "text": "Ten o'clock works perfectly for me. My name is Anita Desai, and my phone number is 9811111003. Is that all set then?"
+    },
+    {
+      "speaker": "AGENT",
+      "text": "Thank you, Anita. Before I finalize that, I just need to confirm the appointment type. Would this be a new consultation, a follow-up, or a teleconsultation?"
+    },
+    {
+      "speaker": "PATIENT",
+      "text": "Oh, it's a new consultation. I haven't seen him before for this knee issue."
+    },
+    {
+      "speaker": "AGENT",
+      "text": "Thank you for confirming. Just to make sure I have everything right: you'd like to book a new consultation with Dr. Subhash Jangid for tomorrow, Friday the seventeenth, at ten o'clock in the morning. Your name is Anita Desai and your phone number is 9 8 1 1 1 1 1 0 0 3. Is that correct?"
+    },
+    {
+      "speaker": "PATIENT",
+      "text": "Yes, that\u2019s all correct. Thank you so much for your help, I really appreciate it. Bye!"
+    },
+    {
+      "speaker": "AGENT",
+      "text": "You're very welcome, Anita. Your appointment is confirmed for a new consultation with Dr. Subhash Jangid on Friday, July seventeenth, at ten o'clock in the morning. Thank you for choosing Fortis, and I hope you feel better soon. Goodbye!"
+    }
+  ],
+  "tool_log": [
+    {
+      "tool": "find_doctors",
+      "args": {
+        "department": "Dermatology"
+      },
+      "result": {
+        "doctors": [
+          {
+            "doctor_id": 99,
+            "name": "Dr. Naresh Jain",
+            "designation": "Senior Consultant Dermatology",
+            "departments": "Dermatology",
+            "experience_years": 20,
+            "consultation_fee_inr": 1800
+          },
+          {
+            "doctor_id": 104,
+            "name": "Dr. Priti Arya",
+            "designation": "Senior Consultant Dermatology",
+            "departments": "Dermatology",
+            "experience_years": 18,
+            "consultation_fee_inr": 1500
+          },
+          {
+            "doctor_id": 107,
+            "name": "Dr. Rashmi Sharma",
+            "designation": "Senior Consultant Dermatology",
+            "departments": "Dermatology",
+            "experience_years": 15,
+            "consultation_fee_inr": 1500
+          },
+          {
+            "doctor_id": 109,
+            "name": "Dr. Sachin Dhawan",
+            "designation": "Senior Consultant Dermatology",
+            "departments": "Dermatology",
+            "experience_years": 20,
+            "consultation_fee_inr": 1800
+          },
+          {
+            "doctor_id": 111,
+            "name": "Dr. Sonal Bansal",
+            "designation": "Senior Consultant Dermatology",
+            "departments": "Dermatology",
+            "experience_years": 15,
+            "consultation_fee_inr": 1200
+          }
+        ],
+        "note": "multiple matches \u2014 ask the caller to choose"
+      },
+      "latency_ms": 9.5
+    },
+    {
+      "tool": "find_doctors",
+      "args": {
+        "department": "Orthopaedics"
+      },
+      "result": {
+        "doctors": [
+          {
+            "doctor_id": 13,
+            "name": "Dr. Jayant Arora",
+            "designation": "Principal Director & Unit Head Orthopaedics",
+            "departments": "Orthopaedics",
+            "experience_years": 26,
+            "consultation_fee_inr": 2500
+          },
+          {
+            "doctor_id": 26,
+            "name": "Dr. Subhash Jangid",
+            "designation": "Principal Director & Unit Head Orthopaedics",
+            "departments": "Orthopaedics",
+            "experience_years": 27,
+            "consultation_fee_inr": 2500
+          },
+          {
+            "doctor_id": 34,
+            "name": "Dr. Anuj Chawla",
+            "designation": "Senior Director Orthopaedics",
+            "departments": "Orthopaedics",
+            "experience_years": 21,
+            "consultation_fee_inr": 1600
+          },
+          {
+            "doctor_id": 35,
+            "name": "Dr. Debashish Chanda",
+            "designation": "Senior Director & Unit Head Orthopaedics",
+            "departments": "Orthopaedics",
+            "experience_years": 22,
+            "consultation_fee_inr": 2000
+          },
+          {
+            "doctor_id": 44,
+            "name": "Dr. Amit Chaudhry",
+            "designation": "Director Orthopaedics",
+            "departments": "Orthopaedics",
+            "experience_years": 14,
+            "consultation_fee_inr": 1800
+          }
+        ],
+        "note": "multiple matches \u2014 ask the caller to choose"
+      },
+      "latency_ms": 9.2
+    },
+    {
+      "tool": "search_availability",
+      "args": {
+        "doctor_id": 26,
+        "date_to": "2026-07-17T12:00:00",
+        "date_from": "2026-07-17T00:00:00",
+        "time_of_day": "morning"
+      },
+      "result": {
+        "doctor": "Dr. Subhash Jangid",
+        "slots": [
+          {
+            "slot_id": 2101,
+            "start": "2026-07-17T09:30:00",
+            "spoken": "Friday, 17 July at 9:30 AM"
+          },
+          {
+            "slot_id": 2102,
+            "start": "2026-07-17T10:00:00",
+            "spoken": "Friday, 17 July at 10:00 AM"
+          },
+          {
+            "slot_id": 2105,
+            "start": "2026-07-17T11:30:00",
+            "spoken": "Friday, 17 July at 11:30 AM"
+          }
+        ]
+      },
+      "latency_ms": 6.7
+    },
+    {
+      "tool": "book_appointment",
+      "args": {
+        "patient_name": "Anita Desai",
+        "slot_id": 2102,
+        "patient_phone": "9811111003",
+        "appointment_type": "new_consultation",
+        "idempotency_key": "a1b2c3d4"
+      },
+      "result": {
+        "booked": true,
+        "appointment_id": 3,
+        "doctor": "Dr. Subhash Jangid",
+        "start": "2026-07-17T10:00:00",
+        "spoken": "Friday, 17 July at 10:00 AM",
+        "type": "New Consultation",
+        "status": "booked",
+        "patient": "Anita Desai",
+        "fee_inr": 2500
+      },
+      "latency_ms": 15.8
+    }
+  ]
+}

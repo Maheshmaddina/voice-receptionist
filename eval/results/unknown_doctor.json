@@ -1,0 +1,116 @@
+{
+  "id": "unknown_doctor",
+  "description": "Caller asks for a doctor who does not work at FMRI; agent must not invent one.",
+  "passed": true,
+  "checks": [
+    {
+      "type": "booked_count",
+      "pass": true,
+      "detail": "booked_count=0 (want 0)"
+    }
+  ],
+  "judge_questions": [
+    "Did the agent avoid pretending Dr. Ramesh Batra works at FMRI or inventing his availability?",
+    "Did the agent offer a helpful next step (department search / spelling check) before accepting the caller's refusal?"
+  ],
+  "turns": 7,
+  "tool_calls": 2,
+  "tool_latency_ms": {
+    "p50": 13.1,
+    "max": 13.2
+  },
+  "transcript": [
+    {
+      "speaker": "AGENT",
+      "text": "Thank you for calling Fortis Memorial Research Institute, Gurgaon. This is Diya. How may I help you today?"
+    },
+    {
+      "speaker": "PATIENT",
+      "text": "Hello, yes, I\u2019m looking to book an appointment with Dr. Ramesh Batra. A friend of mine recommended him highly, and I\u2019d like to see him as soon as possible."
+    },
+    {
+      "speaker": "AGENT",
+      "text": "I'm sorry, I couldn't find a doctor by the name of Ramesh Batra in our system. Would you like me to check for a different name, or perhaps you can tell me which department you are looking for?"
+    },
+    {
+      "speaker": "PATIENT",
+      "text": "That's strange. Are you sure? My friend was very specific\u2014he said Dr. Ramesh Batra at Fortis Gurgaon. Maybe he's a consultant or something? I really only want to see him, nobody else. Can you double-check the spelling or look again?"
+    },
+    {
+      "speaker": "AGENT",
+      "text": "I have double-checked our records, and unfortunately, we don't have a Dr. Ramesh Batra on our staff here at Fortis Memorial Research Institute. I apologize for the confusion. \n\nWould you like me to look for a doctor in a specific department for you instead?"
+    },
+    {
+      "speaker": "PATIENT",
+      "text": "No, look, I\u2019m not interested in seeing anyone else. I\u2019ve heard great things about him specifically, so if he\u2019s not there, then there\u2019s no point. I\u2019ll just have to check with my friend again to see if I got the hospital wrong. Thanks anyway."
+    },
+    {
+      "speaker": "AGENT",
+      "text": "I understand. I'm sorry I couldn't be of more help today. Please do check with your friend, and if you find out he's at a different location or if there's anything else I can assist you with, please feel free to call us back. Have a good day."
+    }
+  ],
+  "tool_log": [
+    {
+      "tool": "find_doctors",
+      "args": {
+        "query": "Ramesh Batra"
+      },
+      "result": {
+        "doctors": [
+          {
+            "doctor_id": 40,
+            "name": "Dr. Vikram Sharma",
+            "designation": "Senior Director Urology",
+            "departments": "Urology",
+            "experience_years": 39,
+            "consultation_fee_inr": 3000
+          },
+          {
+            "doctor_id": 107,
+            "name": "Dr. Rashmi Sharma",
+            "designation": "Senior Consultant Dermatology",
+            "departments": "Dermatology",
+            "experience_years": 15,
+            "consultation_fee_inr": 1500
+          },
+          {
+            "doctor_id": 106,
+            "name": "Dr. Rakesh Kumar Jain",
+            "designation": "Senior Consultant Paediatric Neurology",
+            "departments": "Paediatrics",
+            "experience_years": 19,
+            "consultation_fee_inr": 2000
+          },
+          {
+            "doctor_id": 19,
+            "name": "Dr. Rahul Bhargava.",
+            "designation": "Principal Director & Chief - Hematology, Hemato Oncology & Bone Marrow Transplant",
+            "departments": "Oncology | Organ Transplant | Haematology",
+            "experience_years": 16,
+            "consultation_fee_inr": 1200
+          },
+          {
+            "doctor_id": 143,
+            "name": "Mr. INDRISH BHATIA",
+            "designation": "Consultant Ophthalmology",
+            "departments": "Ophthalmology",
+            "experience_years": 12,
+            "consultation_fee_inr": 1500
+          }
+        ],
+        "note": "multiple matches \u2014 ask the caller to choose"
+      },
+      "latency_ms": 13.0
+    },
+    {
+      "tool": "find_doctors",
+      "args": {
+        "query": "Batra"
+      },
+      "result": {
+        "error": "No doctor at FMRI matched 'Batra'. Ask the caller to spell the name, or search by department."
+      },
+      "latency_ms": 13.2
+    }
+  ]
+}

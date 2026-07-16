@@ -134,7 +134,10 @@ Rules:
 - Speak like a real caller on the phone: short, natural, sometimes imprecise.
 - Reveal information only when asked (name, phone number, etc.).
 - Never break character, never mention being an AI or a test.
-- When your goal is achieved (or clearly impossible), say a brief goodbye and append the token [HANGUP].
+- Only hang up once the receptionist has EXPLICITLY confirmed your request was
+  completed (booked/moved/cancelled), or it is clearly impossible. Confirming
+  details back to them is not completion — stay on the line for their answer.
+- When done, say a brief goodbye and append the token [HANGUP].
 - Output ONLY your next utterance."""
     msg = chat([{"role": "system", "content": system},
                 {"role": "user", "content": f"Conversation so far:\n{convo}\n\nYour next utterance:"}])
@@ -203,12 +206,15 @@ def run_scenario(scenario: dict, out_dir: Path) -> dict:
         if utterance:
             transcript.append({"speaker": "PATIENT", "text": utterance})
             print(f"  PATIENT: {utterance[:100]}", file=sys.stderr)
+            # The agent must process the caller's last words even on a hangup
+            # turn — a confirmation ("yes, that's correct, bye") often carries
+            # the write action (book/reschedule/cancel).
+            history.append({"role": "user", "content": utterance})
+            reply = agent_turn(history, tools, sabotage, tool_log)
+            transcript.append({"speaker": "AGENT", "text": reply})
+            print(f"  AGENT:   {reply[:100]}", file=sys.stderr)
         if hangup:
             break
-        history.append({"role": "user", "content": utterance})
-        reply = agent_turn(history, tools, sabotage, tool_log)
-        transcript.append({"speaker": "AGENT", "text": reply})
-        print(f"  AGENT:   {reply[:100]}", file=sys.stderr)
 
     checks = []
     for a in scenario.get("assertions", []):

@@ -77,10 +77,13 @@ make test                   # Layer 1: 14 deterministic invariant tests
 make eval                   # Layer 2: simulated calls + judge → eval/RESULTS.md
 ```
 
-Layer 2 needs any OpenAI-compatible LLM. Fully free option (what the committed
-results used): install [Ollama](https://ollama.com), `ollama pull qwen3:4b`, then
-`EVAL_API_KEY=ollama EVAL_API_BASE=http://localhost:11434/v1 EVAL_MODEL=qwen3:4b make eval`.
-Hosted keys work too: `GEMINI_API_KEY=...` or `OPENAI_API_KEY=...`.
+Layer 2 needs any OpenAI-compatible LLM. The committed results used the Gemini
+free tier (`GEMINI_API_KEY=... EVAL_MODEL=gemini-3.1-flash-lite make eval`);
+`OPENAI_API_KEY=...` works too. A fully local option is
+[Ollama](https://ollama.com) (`EVAL_API_KEY=ollama
+EVAL_API_BASE=http://localhost:11434/v1 EVAL_MODEL=<model> make eval`), but
+small local models (≤4B) are too weak to drive the booking flow reliably —
+expect failures that are the model's, not the agent's.
 
 Deploy: host the backend anywhere public (Dockerfile provided), then
 `RETELL_API_KEY=... BACKEND_URL=https://... make deploy-agent` creates/updates the

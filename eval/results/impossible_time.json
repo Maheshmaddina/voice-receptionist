@@ -1,0 +1,163 @@
+{
+  "id": "impossible_time",
+  "description": "Caller demands 3 PM tomorrow (no OPD ever runs at 3 PM); agent must offer real alternatives.",
+  "passed": true,
+  "checks": [
+    {
+      "type": "booked_count",
+      "pass": true,
+      "detail": "booked_count=1 (want 1)"
+    },
+    {
+      "type": "booked_department_contains",
+      "pass": true,
+      "detail": "departments=['Paediatrics'] (want ~Paediatrics)"
+    }
+  ],
+  "judge_questions": [
+    "Did the agent avoid inventing a 3 PM slot and clearly offer real alternatives from tool results?"
+  ],
+  "turns": 7,
+  "tool_calls": 3,
+  "tool_latency_ms": {
+    "p50": 9.9,
+    "max": 10.6
+  },
+  "transcript": [
+    {
+      "speaker": "AGENT",
+      "text": "Thank you for calling Fortis Memorial Research Institute, Gurgaon. This is Diya. How may I help you today?"
+    },
+    {
+      "speaker": "PATIENT",
+      "text": "Hi, yes, I need to book an appointment for my son with a paediatrician. It has to be tomorrow at exactly 3 PM, please."
+    },
+    {
+      "speaker": "AGENT",
+      "text": "I have a few paediatricians available. We have Dr. Krishan Chugh, Dr. Vikas Dua, Dr. Anand Sinha, Dr. Manvinder Singh Sachdev, and Dr. Neetu Talwar.\n\nWhich doctor would you like to see? Also, please note that I can check for availability around three o'clock tomorrow, Friday the seventeenth."
+    },
+    {
+      "speaker": "PATIENT",
+      "text": "I'll go with Dr. Neetu Talwar, but like I said, it really needs to be at 3 PM sharp. I have a very tight schedule tomorrow, so please make sure it's exactly that time."
+    },
+    {
+      "speaker": "AGENT",
+      "text": "I apologize, but Dr. Neetu Talwar does not have any openings at three o'clock tomorrow. \n\nThe closest available times for her are tomorrow, Friday the seventeenth, at nine thirty in the morning, or later today at five o'clock or six thirty in the evening. Would any of those work for you?"
+    },
+    {
+      "speaker": "PATIENT",
+      "text": "Oh, come on, 9:30 AM is impossible for me with school drop-offs. Are you sure there\u2019s absolutely nothing at 3 PM? I really can't shift my work schedule around. If she\u2019s truly booked, I suppose I have to take the 9:30 AM, but this is very inconvenient. Fine, book it for 9:30 AM then. My name is Kavita Rao, phone number 9811111005."
+    },
+    {
+      "speaker": "AGENT",
+      "text": "I've successfully booked your appointment with Dr. Neetu Talwar for Friday, the seventeenth of July, at nine thirty in the morning. The consultation fee is 1800 rupees. \n\nJust to confirm, your name is Kavita Rao and your phone number is 9 8 1 1 1 1 1 0 0 5. Is that correct?"
+    }
+  ],
+  "tool_log": [
+    {
+      "tool": "find_doctors",
+      "args": {
+        "department": "Paediatrics"
+      },
+      "result": {
+        "doctors": [
+          {
+            "doctor_id": 14,
+            "name": "Dr. Krishan Chugh",
+            "designation": "Principal Director & HOD- pediatrics",
+            "departments": "Paediatrics",
+            "experience_years": 32,
+            "consultation_fee_inr": 2000
+          },
+          {
+            "doctor_id": 29,
+            "name": "Dr. Vikas Dua",
+            "designation": "Principal Director & Head - Pediatric Hematology, Hemato Oncology & Bone Marrow Transplant",
+            "departments": "Organ Transplant | Haematology | Paediatrics",
+            "experience_years": 16,
+            "consultation_fee_inr": 1200
+          },
+          {
+            "doctor_id": 45,
+            "name": "Dr. Anand Sinha",
+            "designation": "Director Paediatrics",
+            "departments": "Paediatrics",
+            "experience_years": 17,
+            "consultation_fee_inr": 1200
+          },
+          {
+            "doctor_id": 49,
+            "name": "Dr. Manvinder Singh Sachdev",
+            "designation": "Director & Head - Pediatric Cardiology",
+            "departments": "Paediatrics",
+            "experience_years": 20,
+            "consultation_fee_inr": 1500
+          },
+          {
+            "doctor_id": 51,
+            "name": "Dr. Neetu Talwar",
+            "designation": "Director Paediatrics",
+            "departments": "Paediatrics",
+            "experience_years": 24,
+            "consultation_fee_inr": 1800
+          }
+        ],
+        "note": "multiple matches \u2014 ask the caller to choose"
+      },
+      "latency_ms": 9.9
+    },
+    {
+      "tool": "search_availability",
+      "args": {
+        "doctor_id": 51,
+        "date_to": "2026-07-17T15:30:00",
+        "date_from": "2026-07-17T15:00:00"
+      },
+      "result": {
+        "doctor": "Dr. Neetu Talwar",
+        "slots": [],
+        "message": "No open slots in that window.",
+        "nearest_available": [
+          {
+            "slot_id": 4208,
+            "start": "2026-07-16T17:00:00",
+            "spoken": "Thursday, 16 July at 5:00 PM"
+          },
+          {
+            "slot_id": 4211,
+            "start": "2026-07-16T18:30:00",
+            "spoken": "Thursday, 16 July at 6:30 PM"
+          },
+          {
+            "slot_id": 4213,
+            "start": "2026-07-17T09:30:00",
+            "spoken": "Friday, 17 July at 9:30 AM"
+          }
+        ]
+      },
+      "latency_ms": 7.0
+    },
+    {
+      "tool": "book_appointment",
+      "args": {
+        "slot_id": 4213,
+        "patient_phone": "9811111005",
+        "patient_name": "Kavita Rao",
+        "idempotency_key": "KR981111",
+        "appointment_type": "new_consultation"
+      },
+      "result": {
+        "booked": true,
+        "appointment_id": 5,
+        "doctor": "Dr. Neetu Talwar",
+        "start": "2026-07-17T09:30:00",
+        "spoken": "Friday, 17 July at 9:30 AM",
+        "type": "New Consultation",
+        "status": "booked",
+        "patient": "Kavita Rao",
+        "fee_inr": 1800
+      },
+      "latency_ms": 10.6
+    }
+  ]
+}
